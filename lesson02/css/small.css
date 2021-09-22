@@ -1,0 +1,60 @@
+/* MEDIUM QUERY */
+@media (max-width: 64em) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* SMALL QUERY */
+@media (max-width: 32em) {
+  body {
+    padding: 0;
+  }
+
+  header {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  main {
+    display: block;
+    padding: 0rem;
+  }
+
+  section {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  section > h3 {
+    padding: 1.5rem 0.5rem;
+  }
+
+  section > p {
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 12vw;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 6vw;
+  }
+
+  .home {
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 0;
+    left: 0.5rem;
+  }
+
+  .home:hover {
+    padding: 1rem 0.5rem;
+  }
+}

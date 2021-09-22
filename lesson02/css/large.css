@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic);
+
+:root {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  --teal: rgb(18, 116, 134);
+  --dark-teal: rgb(8, 65, 83);
+}
+
+body {
+  max-width: 80rem;
+  margin: auto;
+  background-color: var(--dark-teal);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+header {
+  max-width: 100%;
+  background-color: var(--teal);
+  box-shadow: 0 3px var(--dark-teal);
+  z-index: 1;
+  padding: 0rem 2rem;
+}
+
+main {
+  flex-grow: 1;
+  background-color: white;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: aliceblue;
+  box-shadow: 0 0 1px var(--dark-teal);
+}
+
+section,
+section > * {
+  box-sizing: border-box;
+}
+
+section > h3 {
+  color: white;
+  background-color: var(--dark-teal);
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+section > a {
+  margin-bottom: 1rem;
+}
+
+section > img {
+  max-width: 90%;
+  box-shadow: 0 0 1px;
+}
+
+section > p {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+section > p::first-line {
+  font-weight: 600;
+}
+
+footer {
+  color: white;
+  background-color: var(--dark-teal);
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: rgb(125, 255, 215);
+}
+
+footer a:hover,
+footer a:focus {
+  color: rgb(209, 255, 241);
+}
+
+h1 {
+  font-size: calc(0.5rem + 6vw);
+  color: white;
+  text-shadow: 3px 3px var(--dark-teal);
+}
+
+h2 {
+  /* color: var(--dark-blue); */
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px var(--dark-teal);
+}
+
+.home {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 2;
+  background-color: rgb(44, 157, 177);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: padding 100ms ease;
+}
+
+.home:hover {
+  padding: 0.5rem 1rem;
+}
