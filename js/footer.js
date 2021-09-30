@@ -1,12 +1,10 @@
 // Update the copyright year
-const year = document.querySelector('#year')
 const date = new Date()
-year.innerHTML = date.getFullYear()
+const fullYear = date.getFullYear()
 
 // Get last modified date
-const lastModified = document.querySelector('#lastModified')
 const lastModifiedDate = new Date(document.lastModified)
-lastModified.innerHTML = lastModifiedDate.toLocaleString('en-US', {
+const lastModified = lastModifiedDate.toLocaleString('en-US', {
   month: '2-digit',
   day: '2-digit',
   year: 'numeric',
@@ -14,3 +12,11 @@ lastModified.innerHTML = lastModifiedDate.toLocaleString('en-US', {
   minute: '2-digit',
   second: '2-digit'
 })
+
+document.querySelector('footer').innerHTML = `<span>
+&copy; <span id="year">${fullYear}</span> |
+<a href="https://github.com/eddiemcconkie">Eddie McConkie</a> | Utah |
+<a href="https://www.byui.edu/online">BYU-I Online Learning</a>
+<br />
+Last Updated: <span id="lastModified">${lastModified}</span>
+</span>`

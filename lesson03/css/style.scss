@@ -1,0 +1,77 @@
+$dark-slate-gray: hsla(188, 30%, 24%, 1);
+$timberwolf: hsla(150, 14%, 84%, 1);
+$alabaster: hsla(81, 28%, 90%, 1);
+$maize-crayola: hsla(44, 88%, 66%, 1);
+$eerie-black: hsla(60, 1%, 14%, 1);
+$jet: hsla(120, 2%, 20%, 1);
+
+$light-maize-crayola: lighten($maize-crayola, 10);
+
+@import '../../css/layout.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Noto Sans Display', 'Noto Sans', sans-serif;
+  // background-color: $jet;
+  background-color: $eerie-black;
+}
+
+body {
+  color: $jet;
+  background-color: $alabaster;
+}
+
+header {
+  background-color: $dark-slate-gray;
+  padding: 1rem 2rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  // background-color: darken($dark-slate-gray, 10);
+  background-color: $eerie-black;
+
+  span {
+    color: $timberwolf;
+  }
+
+  a {
+    color: $maize-crayola;
+
+    &:hover,
+    &:focus {
+      color: $light-maize-crayola;
+    }
+  }
+}
+
+h1 {
+  // color: $dark-slate-gray;
+  color: $alabaster;
+}
+
+h3 {
+  // color: darken($alabaster, 5);
+  color: $timberwolf;
+}
+
+button {
+  color: $jet;
+  background-color: $maize-crayola;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    // background-color: $light-maize-crayola;
+    background-color: lighten($maize-crayola, 5);
+    transform: scale(1.02);
+  }
+}
