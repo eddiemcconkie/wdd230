@@ -1,0 +1,28 @@
+$s-m-breakpoint: 32rem !default;
+
+.home-button {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 2;
+  text-decoration: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: padding 100ms ease;
+
+  &:hover {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: $s-m-breakpoint) {
+  .home-button {
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 0;
+    left: 0.5rem;
+
+    &:hover {
+      padding: 1rem 0.5rem;
+    }
+  }
+}

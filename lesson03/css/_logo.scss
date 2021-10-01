@@ -1,0 +1,30 @@
+svg {
+  overflow: visible;
+}
+
+#logo:hover {
+  transform-origin: center;
+  transform: scale(1.02);
+}
+
+#waterHighlight {
+  transform-origin: center;
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+#logo:hover #waterHighlight {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}

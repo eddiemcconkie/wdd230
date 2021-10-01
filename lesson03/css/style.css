@@ -26,7 +26,7 @@ footer {
 
 body {
   color: #323432;
-  background-color: #e8edde;
+  background-color: #edf1e4;
 }
 
 header {
@@ -36,6 +36,15 @@ header {
 
 main {
   padding: 2rem;
+  max-width: 48rem;
+}
+@media (min-width: 32rem) {
+  main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
 }
 
 footer {
@@ -52,7 +61,8 @@ footer a:hover, footer a:focus {
 }
 
 h1 {
-  color: #e8edde;
+  color: #edf1e4;
+  margin-top: 3rem;
 }
 
 h3 {
@@ -67,6 +77,129 @@ button {
   border-radius: 2px;
 }
 button:hover, button:focus {
-  background-color: #f6d374;
+  background-color: #f6d26f;
   transform: scale(1.02);
+}
+
+main a {
+  color: #477c85;
+}
+main a:hover, main a:focus {
+  color: #599ca6;
+}
+
+.logo {
+  min-width: 50%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5cc5c;
+}
+nav a {
+  text-align: center;
+  padding: 0.5rem;
+  color: #323432;
+  background-color: #f5cc5c;
+  text-decoration: none;
+  transition: padding 100ms linear, background-color 100ms linear;
+}
+nav a:hover, nav a:focus {
+  background-color: #f6d26f;
+  padding-block: 1rem;
+}
+nav a + a {
+  border-top: 1px solid #323432;
+}
+@media (min-width: 32rem) {
+  nav {
+    flex-direction: row;
+  }
+  nav a {
+    border-right: 1px solid #323432;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #f6d374;
+    padding: 0.5rem 1rem;
+  }
+  nav a + a {
+    border-top: none;
+  }
+}
+
+.home-button {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 2;
+  text-decoration: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: padding 100ms ease;
+}
+.home-button:hover {
+  padding: 0.5rem 1rem;
+}
+
+@media (max-width: 32rem) {
+  .home-button {
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 0;
+    left: 0.5rem;
+  }
+  .home-button:hover {
+    padding: 1rem 0.5rem;
+  }
+}
+.home-button {
+  color: #323432;
+  background-color: #f5cc5c;
+  outline: 1px solid #323432;
+}
+
+svg {
+  overflow: visible;
+}
+
+#logo:hover {
+  transform-origin: center;
+  transform: scale(1.02);
+}
+
+#waterHighlight {
+  transform-origin: center;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#logo:hover #waterHighlight {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
 }/*# sourceMappingURL=style.css.map */
