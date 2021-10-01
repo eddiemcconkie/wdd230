@@ -101,11 +101,13 @@ button {
 }
 
 main a {
-  color: $slate-gray;
+  // color: $slate-gray;
+  color: $dark-slate-gray;
 
   &:hover,
   &:focus {
-    color: lighten($slate-gray, 10);
+    // color: lighten($slate-gray, 10);
+    color: $slate-gray;
   }
 }
 

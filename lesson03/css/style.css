@@ -82,10 +82,10 @@ button:hover, button:focus {
 }
 
 main a {
-  color: #477c85;
+  color: #2b4b50;
 }
 main a:hover, main a:focus {
-  color: #599ca6;
+  color: #477c85;
 }
 
 .logo {
