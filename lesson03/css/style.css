@@ -31,7 +31,7 @@ footer {
 
 body {
   color: #323432;
-  background-color: #edf1e4;
+  background-color: #f6f8f2;
   max-width: 60rem;
 }
 
@@ -91,7 +91,7 @@ footer a:hover, footer a:focus {
 }
 
 h1 {
-  color: #edf1e4;
+  color: #f6f8f2;
   margin-top: 3rem;
 }
 
@@ -181,11 +181,11 @@ nav a + a {
   margin-top: 1rem;
 }
 .swatch.dark-slate-gray {
-  color: #edf1e4;
+  color: #f6f8f2;
   background-color: #2b4b50;
 }
 .swatch.slate-gray {
-  color: #edf1e4;
+  color: #f6f8f2;
   background-color: #477c85;
 }
 .swatch.maize-crayola {
@@ -207,11 +207,11 @@ nav a + a {
   outline: #979b97 solid 1px;
 }
 .swatch.jet {
-  color: #edf1e4;
+  color: #f6f8f2;
   background-color: #323432;
 }
 .swatch.eerie-black {
-  color: #edf1e4;
+  color: #f6f8f2;
   background-color: #242423;
 }
 .swatch:hover {
