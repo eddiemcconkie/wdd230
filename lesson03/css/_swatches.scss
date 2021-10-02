@@ -1,0 +1,73 @@
+// $swatches: (
+//   'dark-slate-gray': $ivory,
+//   'slate-gray': $ivory,
+//   'maize-crayola': $jet,
+//   'light-maize-crayola': $jet,
+//   'alabaster': $jet,
+//   'timberwolf': $jet,
+//   'jet': $ivory,
+//   'eerie-black': $ivory
+// );
+
+.swatch {
+  flex-grow: 1;
+  flex: 1 1 120px;
+  min-height: 80px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-set {
+    display: flex;
+    gap: 1rem;
+    min-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  &.dark-slate-gray {
+    color: $ivory;
+    background-color: $dark-slate-gray;
+  }
+  &.slate-gray {
+    color: $ivory;
+    background-color: $slate-gray;
+  }
+  &.maize-crayola {
+    color: $jet;
+    background-color: $maize-crayola;
+  }
+  &.light-maize-crayola {
+    color: $jet;
+    background-color: $light-maize-crayola;
+  }
+  &.alabaster {
+    color: $jet;
+    background-color: $alabaster;
+    outline: lighten($jet, 40) solid 1px;
+  }
+  &.timberwolf {
+    color: $jet;
+    background-color: $timberwolf;
+    outline: lighten($jet, 40) solid 1px;
+  }
+  &.jet {
+    color: $ivory;
+    background-color: $jet;
+  }
+  &.eerie-black {
+    color: $ivory;
+    background-color: $eerie-black;
+  }
+
+  transition: transform 200ms ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include medium {
+    flex-direction: column;
+  }
+}

@@ -1,6 +1,13 @@
 $s-m-breakpoint: 32rem;
 $m-l-breakpoint: 64rem;
 
+// Inline media queries
+@mixin small {
+  @media (max-width: $s-m-breakpoint) {
+    @content;
+  }
+}
+
 @mixin medium {
   @media (min-width: $s-m-breakpoint) {
     @content;
@@ -13,6 +20,7 @@ $m-l-breakpoint: 64rem;
   }
 }
 
+// Colors
 $dark-slate-gray: hsla(188, 30%, 24%, 1);
 $slate-gray: hsla(188, 30%, 40%, 1);
 $timberwolf: hsla(150, 14%, 84%, 1);
@@ -23,8 +31,7 @@ $light-maize-crayola: hsla(44, 88%, 70%, 1);
 $eerie-black: hsla(60, 1%, 14%, 1);
 $jet: hsla(120, 2%, 20%, 1);
 
-// $light-maize-crayola: lighten($maize-crayola, 5);
-
+// Default layout
 @import '../../css/layout.scss';
 
 * {
@@ -54,16 +61,46 @@ header {
 
 main {
   padding: 2rem;
-
   max-width: 48rem;
+
+  // For display on the typography page
+  h1,
+  h2 {
+    // color: $jet;
+    background-color: $dark-slate-gray;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 3px;
+  }
 
   @include medium {
     display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 4rem;
+    // grid-template-columns: auto 1fr;
+    // grid-template-columns: minmax(200px, 250px) auto;
+    // grid-template-columns: minmax(200px, max-content) auto;
+    grid-template-columns: minmax(200px, 3fr) 5fr;
+    gap: 1rem 2rem;
 
-    p {
-      margin-top: 1.6rem;
+    p,
+    ul {
+      margin-top: 1.8rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+ul {
+  padding-left: 0;
+
+  li {
+    list-style-type: square;
+
+    & + li {
+      margin-top: 1rem;
+    }
+
+    &::marker {
+      color: $slate-gray;
     }
   }
 }
@@ -169,10 +206,11 @@ nav {
   }
 }
 
-@import '../../css/home_button.scss';
+@import 'swatches.scss';
 
-.home-button {
-  // color: $eerie-black;
+@import '../../css/portal_button.scss';
+
+.portal-button {
   color: $jet;
   background-color: $maize-crayola;
   outline: 1px solid $jet;

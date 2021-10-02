@@ -44,16 +44,37 @@ main {
   padding: 2rem;
   max-width: 48rem;
 }
+main h1,
+main h2 {
+  background-color: #2b4b50;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 3px;
+}
 @media (min-width: 32rem) {
   main {
     display: grid;
-    grid-template-columns: auto 1fr;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    grid-template-columns: minmax(200px, 3fr) 5fr;
+    gap: 1rem 2rem;
   }
-  main p {
-    margin-top: 1.6rem;
+  main p,
+main ul {
+    margin-top: 1.8rem;
+    line-height: 1.5rem;
   }
+}
+
+ul {
+  padding-left: 0;
+}
+ul li {
+  list-style-type: square;
+}
+ul li + li {
+  margin-top: 1rem;
+}
+ul li::marker {
+  color: #477c85;
 }
 
 footer {
@@ -142,7 +163,67 @@ nav a + a {
   }
 }
 
-.home-button {
+.swatch {
+  flex-grow: 1;
+  flex: 1 1 120px;
+  min-height: 80px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease;
+}
+.swatch-set {
+  display: flex;
+  gap: 1rem;
+  min-width: 100%;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.swatch.dark-slate-gray {
+  color: #edf1e4;
+  background-color: #2b4b50;
+}
+.swatch.slate-gray {
+  color: #edf1e4;
+  background-color: #477c85;
+}
+.swatch.maize-crayola {
+  color: #323432;
+  background-color: #f5cc5c;
+}
+.swatch.light-maize-crayola {
+  color: #323432;
+  background-color: #f6d26f;
+}
+.swatch.alabaster {
+  color: #323432;
+  background-color: #e8edde;
+  outline: #979b97 solid 1px;
+}
+.swatch.timberwolf {
+  color: #323432;
+  background-color: #d0dcd6;
+  outline: #979b97 solid 1px;
+}
+.swatch.jet {
+  color: #edf1e4;
+  background-color: #323432;
+}
+.swatch.eerie-black {
+  color: #edf1e4;
+  background-color: #242423;
+}
+.swatch:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 32rem) {
+  .swatch {
+    flex-direction: column;
+  }
+}
+
+.portal-button {
   position: fixed;
   top: 1rem;
   left: 0;
@@ -152,21 +233,21 @@ nav a + a {
   border-radius: 0 0.5rem 0.5rem 0;
   transition: padding 100ms ease;
 }
-.home-button:hover {
+.portal-button:hover {
   padding: 0.5rem 1rem;
 }
 
 @media (max-width: 32rem) {
-  .home-button {
+  .portal-button {
     border-radius: 0 0 0.5rem 0.5rem;
     top: 0;
     left: 0.5rem;
   }
-  .home-button:hover {
+  .portal-button:hover {
     padding: 1rem 0.5rem;
   }
 }
-.home-button {
+.portal-button {
   color: #323432;
   background-color: #f5cc5c;
   outline: 1px solid #323432;
@@ -176,8 +257,12 @@ svg {
   overflow: visible;
 }
 
-#logo:hover {
+#logo {
   transform-origin: center;
+  transition: transform 100ms ease;
+}
+
+#logo:hover {
   transform: scale(1.02);
 }
 

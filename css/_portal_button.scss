@@ -1,6 +1,6 @@
 $s-m-breakpoint: 32rem !default;
 
-.home-button {
+.portal-button {
   position: fixed;
   top: 1rem;
   left: 0;
@@ -16,7 +16,7 @@ $s-m-breakpoint: 32rem !default;
 }
 
 @media (max-width: $s-m-breakpoint) {
-  .home-button {
+  .portal-button {
     border-radius: 0 0 0.5rem 0.5rem;
     top: 0;
     left: 0.5rem;

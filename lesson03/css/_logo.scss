@@ -2,8 +2,12 @@ svg {
   overflow: visible;
 }
 
-#logo:hover {
+#logo {
   transform-origin: center;
+  transition: transform 100ms ease;
+}
+
+#logo:hover {
   transform: scale(1.02);
 }
 
