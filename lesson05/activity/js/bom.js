@@ -8,8 +8,8 @@ addButton.addEventListener('click', (e) => {
   value = input.value.trim()
   if (value) {
     addToList(value)
-    input.focus()
   }
+  input.focus()
   input.value = ''
 })
 
