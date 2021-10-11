@@ -21,7 +21,6 @@ const addToList = (chapter) => {
 }
 
 const removeFromList = (chapter) => {
-  console.log(chapter)
   favoriteChapters = favoriteChapters.filter((curr) => curr != chapter)
   updateList()
 }
