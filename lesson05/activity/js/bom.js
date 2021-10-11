@@ -5,11 +5,12 @@ const list = document.querySelector('ul')
 let favoriteChapters = []
 
 addButton.addEventListener('click', (e) => {
-  if (input.value.trim()) {
-    addToList(input.value)
-    input.value = ''
+  value = input.value.trim()
+  if (value) {
+    addToList(value)
     input.focus()
   }
+  input.value = ''
 })
 
 const addToList = (chapter) => {
