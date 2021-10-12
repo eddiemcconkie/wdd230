@@ -1,0 +1,394 @@
+$s-m-breakpoint: 35rem;
+$m-l-breakpoint: 64rem;
+
+// Inline media queries
+@mixin small {
+  // There's a weird 1px spot in between medium and small that has a weird overlap
+  @media (max-width: $s-m-breakpoint - 0.0625rem) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: $s-m-breakpoint) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: $m-l-breakpoint) {
+    @content;
+  }
+}
+
+// Colors
+$dark-slate-gray: hsl(188, 30%, 24%);
+$slate-gray: hsl(188, 30%, 40%);
+$timberwolf: hsl(150, 14%, 84%);
+$alabaster: hsl(81, 28%, 90%);
+$ivory: hsl(78, 32%, 96%);
+$maize-crayola: hsl(44, 88%, 66%);
+$light-maize-crayola: hsl(44, 88%, 70%);
+$eerie-black: hsl(60, 1%, 14%);
+$jet: hsl(120, 2%, 20%);
+
+// Default layout
+@import '../../css/layout.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  // font-family: 'Noto Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: $eerie-black;
+
+  @include medium {
+    padding: 0 1rem;
+  }
+}
+
+body {
+  color: $jet;
+  background-color: $ivory;
+  max-width: 60rem;
+
+  //                  head nav  main ... rest are auto
+  grid-template-rows: auto auto 1fr;
+}
+
+header {
+  background-color: $dark-slate-gray;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+
+  .logo {
+    padding: 0.5rem 0;
+  }
+
+  @include small {
+    // border-bottom: 5px solid $maize-crayola;
+    padding: 0.5rem;
+    padding-right: 3.5rem;
+    gap: 0;
+
+    h1 {
+      margin-top: 0rem;
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 0.8rem;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    svg {
+      width: 60%;
+      height: 60%;
+    }
+  }
+}
+
+nav {
+  position: relative;
+  background-color: $ivory;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: $maize-crayola;
+    box-shadow: 0 0 5px $jet;
+    z-index: 10;
+
+    @include small {
+      position: absolute;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      text-align: right;
+      min-width: 70%;
+      border-radius: 0 0 0 0.8rem;
+
+      transition: transform 150ms ease;
+
+      overflow: hidden;
+      transform-origin: top;
+      &.closed {
+        transform: scaleY(0);
+      }
+    }
+
+    li:not(.close-overlay) {
+      flex-grow: 1;
+      text-align: center;
+
+      a {
+        padding: 0.6rem 0;
+        text-decoration: none;
+        color: $jet;
+        display: block;
+
+        &:hover,
+        &:focus {
+          transform: scale(1.03);
+        }
+
+        @include small {
+          padding-inline: 1.5rem;
+        }
+      }
+
+      & + li {
+        border-left: 1px solid $jet;
+
+        @include small {
+          border-top: 1px solid $jet;
+          border-left: none;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $light-maize-crayola;
+      }
+
+      &.active {
+        background-color: lighten($slate-gray, 15);
+      }
+    }
+  }
+}
+
+.close-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+
+  // closeOverlay is a fixed element covering the whole screen, allowing you to close the menu by clicking anywhere off the menu
+  // ul z-index must be set
+  z-index: -2;
+}
+
+.menu-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem 0 0 0;
+  font-size: 1.2rem;
+  color: $jet;
+  // Above box shadow
+  z-index: 1;
+
+  @include medium {
+    visibility: hidden;
+  }
+}
+
+main {
+  padding: 2rem;
+  padding-top: 0;
+
+  @include small {
+    padding: 1rem;
+  }
+}
+
+footer {
+  background-color: $eerie-black;
+
+  span {
+    color: $timberwolf;
+  }
+
+  a {
+    color: $maize-crayola;
+
+    &:hover,
+    &:focus {
+      color: lighten($maize-crayola, 10);
+    }
+  }
+}
+
+h1 {
+  color: $ivory;
+  margin-top: 3rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: $timberwolf;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $jet;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: $jet;
+
+  address & {
+    // color: $ivory;
+  }
+}
+
+button {
+  color: $jet;
+  background-color: $maize-crayola;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    background-color: $light-maize-crayola;
+  }
+}
+
+main a {
+  color: $dark-slate-gray;
+
+  &:hover,
+  &:focus {
+    color: $slate-gray;
+  }
+}
+
+// @import '../../css/portal_button';
+
+// .portal-button {
+//   color: $jet;
+//   background-color: $maize-crayola;
+//   outline: 1px solid $jet;
+// }
+
+.hero {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+
+  &-section {
+    position: relative;
+  }
+
+  &-container {
+    position: relative;
+    margin: 0 -2rem;
+  }
+
+  &-container::after {
+    content: '';
+    // width: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba($dark-slate-gray, 0.5),
+      rgba($dark-slate-gray, 0)
+    );
+  }
+}
+.weather-summary {
+  position: static;
+  @include large {
+    position: absolute;
+    top: 0;
+    // color: $jet;
+    background-color: $alabaster;
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 20rem;
+    box-shadow: 0 0 5px $jet;
+  }
+}
+
+.forecast {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: $alabaster;
+  padding: 1rem;
+
+  img {
+    margin: 0.1em;
+    flex: 0 1 auto;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  // flex-direction: column-reverse;
+
+  img {
+    width: 90%;
+    margin: auto;
+    order: 1;
+  }
+
+  @include medium {
+    display: block;
+
+    img {
+      margin: 0 0 1rem 1rem;
+      float: right;
+      width: auto;
+    }
+  }
+}
+
+address {
+  background-color: lighten($slate-gray, 10);
+  padding: 1em;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5em;
+
+  @include small {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.icon-small {
+  max-width: 1rem;
+}
+
+.icon-large {
+  max-width: 3rem;
+}
+
+.map {
+  width: 100%;
+  object-fit: cover;
+
+  max-height: 250px;
+
+  @include small {
+    max-height: 150px;
+  }
+}
+
+@import '../../lesson03/css/logo';
+
+.placeholder {
+  padding: 1rem;
+  border: $dark-slate-gray 2px dashed;
+  margin-block: 1rem;
+  background-color: $alabaster;
+}
