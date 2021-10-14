@@ -25,7 +25,7 @@ footer {
 }
 @media (min-width: 35rem) {
   :root {
-    padding: 0 1rem;
+    padding: 0 1em;
   }
 }
 
@@ -38,22 +38,22 @@ body {
 
 header {
   background-color: #2b4b50;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
   display: flex;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 2em;
 }
 header .logo {
-  padding: 0.5rem 0;
+  padding: 0.5em 0;
 }
 @media (max-width: 34.9375rem) {
   header {
-    padding: 0.5rem;
-    padding-right: 3.5rem;
+    padding: 0.5em;
+    padding-right: 3.5em;
     gap: 0;
   }
   header h1 {
-    margin-top: 0rem;
+    margin-top: 0;
     font-size: 1.5rem;
   }
   header h2 {
@@ -66,6 +66,10 @@ header .logo {
     width: 60%;
     height: 60%;
   }
+}
+
+img {
+  box-shadow: 0 0 2px #323432;
 }
 
 nav {
@@ -104,7 +108,7 @@ nav ul li:not(.close-overlay) {
   text-align: center;
 }
 nav ul li:not(.close-overlay) a {
-  padding: 0.6rem 0;
+  padding: 0.6em 0;
   text-decoration: none;
   color: #323432;
   display: block;
@@ -114,7 +118,7 @@ nav ul li:not(.close-overlay) a:hover, nav ul li:not(.close-overlay) a:focus {
 }
 @media (max-width: 34.9375rem) {
   nav ul li:not(.close-overlay) a {
-    padding-inline: 1.5rem;
+    padding-inline: 1.5em;
   }
 }
 nav ul li:not(.close-overlay) + li {
@@ -145,11 +149,11 @@ nav ul li:not(.close-overlay).active {
   right: 0;
   top: 0;
   transform: translateY(-100%);
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 0.5rem 0 0 0;
   font-size: 1.2rem;
   color: #323432;
-  z-index: 1;
+  z-index: 11;
 }
 @media (min-width: 35rem) {
   .menu-button {
@@ -158,12 +162,12 @@ nav ul li:not(.close-overlay).active {
 }
 
 main {
-  padding: 2rem;
+  padding: 2em;
   padding-top: 0;
 }
 @media (max-width: 34.9375rem) {
   main {
-    padding: 1rem;
+    padding: 1em;
   }
 }
 
@@ -182,7 +186,7 @@ footer a:hover, footer a:focus {
 
 h1 {
   color: #f6f8f2;
-  margin-top: 3rem;
+  margin-top: 3em;
 }
 
 h2 {
@@ -199,10 +203,11 @@ h4 {
   font-size: 1.2rem;
   color: #323432;
 }
+
 button {
   color: #323432;
   background-color: #f5cc5c;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border: none;
   border-radius: 2px;
 }
@@ -229,7 +234,7 @@ main a:hover, main a:focus {
 }
 .hero-container {
   position: relative;
-  margin: 0 -2rem;
+  margin: 0 -2em;
 }
 .hero-container::after {
   content: "";
@@ -248,8 +253,8 @@ main a:hover, main a:focus {
     position: absolute;
     top: 0;
     background-color: #e8edde;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 1em;
+    margin: 1em;
     max-width: 20rem;
     box-shadow: 0 0 5px #323432;
   }
@@ -259,7 +264,7 @@ main a:hover, main a:focus {
   display: flex;
   justify-content: space-around;
   background-color: #e8edde;
-  padding: 1rem;
+  padding: 1em;
 }
 .forecast img {
   margin: 0.1em;
@@ -280,7 +285,7 @@ article img {
     display: block;
   }
   article img {
-    margin: 0 0 1rem 1rem;
+    margin: 0 0 1em 1em;
     float: right;
     width: auto;
   }
@@ -288,10 +293,10 @@ article img {
 
 address {
   background-color: #599ca6;
-  padding: 1em;
+  padding: 1.5em;
   display: flex;
   flex-direction: row-reverse;
-  gap: 5em;
+  gap: 3em;
 }
 @media (max-width: 34.9375rem) {
   address {
@@ -299,13 +304,34 @@ address {
     gap: 1em;
   }
 }
+address * {
+  flex: 1 1 50%;
+}
 
-.icon-small {
-  max-width: 1rem;
+.facebook {
+  --color: #1877f2;
+}
+
+.instagram {
+  --color: #c32aa3;
+}
+
+.twitter {
+  --color: #1da1f2;
 }
 
 .icon-large {
-  max-width: 3rem;
+  font-size: 3rem;
+  margin-right: 1rem;
+  background-color: #323432;
+  border-radius: 7px;
+  padding: 0px 3px;
+  transition: color 100ms ease;
+  color: #599ca6;
+}
+.icon-large:hover, .icon-large:focus {
+  color: var(--color);
+  transform: scale(1.02);
 }
 
 .map {
@@ -317,6 +343,12 @@ address {
 @media (max-width: 34.9375rem) {
   .map {
     max-height: 150px;
+  }
+}
+
+@media (max-width: 34.9375rem) {
+  .large-only {
+    display: none;
   }
 }
 
@@ -370,8 +402,8 @@ svg {
   }
 }
 .placeholder {
-  padding: 1rem;
+  padding: 1em;
   border: #2b4b50 2px dashed;
-  margin-block: 1rem;
+  margin-block: 1em;
   background-color: #e8edde;
 }/*# sourceMappingURL=style.css.map */

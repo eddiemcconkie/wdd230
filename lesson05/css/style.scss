@@ -45,7 +45,7 @@ $jet: hsl(120, 2%, 20%);
   background-color: $eerie-black;
 
   @include medium {
-    padding: 0 1rem;
+    padding: 0 1em;
   }
 }
 
@@ -60,24 +60,24 @@ body {
 
 header {
   background-color: $dark-slate-gray;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
 
   display: flex;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 2em;
 
   .logo {
-    padding: 0.5rem 0;
+    padding: 0.5em 0;
   }
 
   @include small {
     // border-bottom: 5px solid $maize-crayola;
-    padding: 0.5rem;
-    padding-right: 3.5rem;
+    padding: 0.5em;
+    padding-right: 3.5em;
     gap: 0;
 
     h1 {
-      margin-top: 0rem;
+      margin-top: 0;
       font-size: 1.5rem;
     }
     h2 {
@@ -93,6 +93,10 @@ header {
       height: 60%;
     }
   }
+}
+
+img {
+  box-shadow: 0 0 2px $jet;
 }
 
 nav {
@@ -132,7 +136,7 @@ nav {
       text-align: center;
 
       a {
-        padding: 0.6rem 0;
+        padding: 0.6em 0;
         text-decoration: none;
         color: $jet;
         display: block;
@@ -143,7 +147,7 @@ nav {
         }
 
         @include small {
-          padding-inline: 1.5rem;
+          padding-inline: 1.5em;
         }
       }
 
@@ -183,12 +187,12 @@ nav {
   right: 0;
   top: 0;
   transform: translateY(-100%);
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 0.5rem 0 0 0;
   font-size: 1.2rem;
   color: $jet;
   // Above box shadow
-  z-index: 1;
+  z-index: 11;
 
   @include medium {
     visibility: hidden;
@@ -196,11 +200,11 @@ nav {
 }
 
 main {
-  padding: 2rem;
+  padding: 2em;
   padding-top: 0;
 
   @include small {
-    padding: 1rem;
+    padding: 1em;
   }
 }
 
@@ -223,7 +227,7 @@ footer {
 
 h1 {
   color: $ivory;
-  margin-top: 3rem;
+  margin-top: 3em;
 }
 
 h2 {
@@ -239,16 +243,12 @@ h3 {
 h4 {
   font-size: 1.2rem;
   color: $jet;
-
-  address & {
-    // color: $ivory;
-  }
 }
 
 button {
   color: $jet;
   background-color: $maize-crayola;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border: none;
   border-radius: 2px;
 
@@ -287,7 +287,7 @@ main a {
 
   &-container {
     position: relative;
-    margin: 0 -2rem;
+    margin: 0 -2em;
   }
 
   &-container::after {
@@ -310,8 +310,8 @@ main a {
     top: 0;
     // color: $jet;
     background-color: $alabaster;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 1em;
+    margin: 1em;
     max-width: 20rem;
     box-shadow: 0 0 5px $jet;
   }
@@ -322,7 +322,7 @@ main a {
   // flex-wrap: wrap;
   justify-content: space-around;
   background-color: $alabaster;
-  padding: 1rem;
+  padding: 1em;
 
   img {
     margin: 0.1em;
@@ -345,7 +345,7 @@ article {
     display: block;
 
     img {
-      margin: 0 0 1rem 1rem;
+      margin: 0 0 1em 1em;
       float: right;
       width: auto;
     }
@@ -354,25 +354,51 @@ article {
 
 address {
   background-color: lighten($slate-gray, 10);
-  padding: 1em;
+  padding: 1.5em;
   display: flex;
   flex-direction: row-reverse;
-  gap: 5em;
+  gap: 3em;
 
   @include small {
     flex-direction: column;
     gap: 1em;
   }
+
+  * {
+    flex: 1 1 50%;
+  }
+
+  // section {
+  //   flex: 1 1 50%;
+  // }
 }
 
-.icon-small {
-  max-width: 1rem;
+.facebook {
+  --color: #1877f2;
 }
 
+.instagram {
+  --color: #c32aa3;
+}
+
+.twitter {
+  --color: #1da1f2;
+}
 .icon-large {
-  max-width: 3rem;
-}
+  font-size: 3rem;
+  margin-right: 1rem;
+  background-color: $jet;
+  border-radius: 7px;
+  padding: 0px 3px;
+  transition: color 100ms ease;
+  color: lighten($slate-gray, 10);
 
+  &:hover,
+  &:focus {
+    color: var(--color);
+    transform: scale(1.02);
+  }
+}
 .map {
   width: 100%;
   object-fit: cover;
@@ -384,11 +410,17 @@ address {
   }
 }
 
+.large-only {
+  @include small {
+    display: none;
+  }
+}
+
 @import '../../lesson03/css/logo';
 
 .placeholder {
-  padding: 1rem;
+  padding: 1em;
   border: $dark-slate-gray 2px dashed;
-  margin-block: 1rem;
+  margin-block: 1em;
   background-color: $alabaster;
 }

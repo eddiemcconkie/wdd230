@@ -26,6 +26,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/15fcc5ceac.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -118,8 +123,8 @@
       <ul class="closed">
         <!-- closeOverlay is a fixed element covering the whole screen, allowing you to close the menu by clicking anywhere off the menu -->
         <li class="close-overlay" id="closeOverlay"></li>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Preston</a></li>
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">Preston</a></li>
         <li><a href="#">Soda Springs</a></li>
         <li><a href="#">Fish Haven</a></li>
         <li><a href="#">Storm Center</a></li>
@@ -184,45 +189,38 @@
     <address>
       <section class="contact">
         <h4>Contact Information</h4>
-        <p>
-          <img
-            class="icon-small"
-            src="images/location-dot-solid.svg"
-            alt="map icon"
-          />
+        <p class="large-only">
+          <i class="fa-solid fa-location-dot"></i>
           location
         </p>
         <p>
-          <img class="icon-small" src="images/phone-solid.svg" alt="map icon" />
+          <i class="fa-solid fa-phone"></i>
           phone
         </p>
         <p>
-          <img
-            class="icon-small"
-            src="images/envelope-solid.svg"
-            alt="map icon"
-          />
+          <i class="fa-solid fa-envelope"></i>
           email
         </p>
         <div class="social-links">
-          <img
-            class="icon-large"
-            src="images/facebook-square-brands.svg"
-            alt="facebook icon"
-          />
-          <img
-            class="icon-large"
-            src="images/instagram-square-brands.svg"
-            alt="instagram icon"
-          />
-          <img
-            class="icon-large"
-            src="images/twitter-square-brands.svg"
-            alt="twitter icon"
-          />
+          <i
+            class="fa-brands fa-facebook-square icon-large facebook large-only"
+          ></i>
+          <!-- <i class="fa-brands fa-facebook icon-large facebook"></i> -->
+          <i
+            class="
+              fa-brands fa-instagram-square
+              icon-large
+              instagram
+              large-only
+            "
+          ></i>
+          <!-- <i class="fa-brands fa-instagram icon-large instagram"></i> -->
+          <i
+            class="fa-brands fa-twitter-square icon-large twitter large-only"
+          ></i>
+          <!-- <i class="fa-brands fa-twitter icon-large twitter"></i> -->
         </div>
       </section>
-
       <img
         class="map"
         src="images/city-map-g4ee82195b_640.png"
