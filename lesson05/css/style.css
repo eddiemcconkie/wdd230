@@ -161,6 +161,27 @@ nav ul li:not(.close-overlay).active {
   }
 }
 
+.banner {
+  color: #f6f8f2;
+  background: linear-gradient(#2b4b50, #477c85);
+  text-align: center;
+  padding: 1em;
+  margin-top: 1em;
+  line-height: 2.5rem;
+}
+@media (max-width: 34.9375rem) {
+  .banner {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5em;
+  }
+}
+@media (min-width: 64rem) {
+  .banner {
+    font-size: 1.5rem;
+  }
+}
+
 main {
   padding: 2em;
   padding-top: 0;

@@ -24,6 +24,7 @@ $m-l-breakpoint: 64rem;
 // Colors
 $dark-slate-gray: hsl(188, 30%, 24%);
 $slate-gray: hsl(188, 30%, 40%);
+$light-slate-gray: hsl(188, 30%, 50%);
 $timberwolf: hsl(150, 14%, 84%);
 $alabaster: hsl(81, 28%, 90%);
 $ivory: hsl(78, 32%, 96%);
@@ -199,6 +200,25 @@ nav {
   }
 }
 
+.banner {
+  color: $ivory;
+  background: linear-gradient($dark-slate-gray, $slate-gray);
+  text-align: center;
+  padding: 1em;
+  margin-top: 1em;
+  line-height: 2.5rem;
+
+  @include small {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5em;
+  }
+
+  @include large {
+    font-size: 1.5rem;
+  }
+}
+
 main {
   padding: 2em;
   padding-top: 0;
@@ -353,7 +373,7 @@ article {
 }
 
 address {
-  background-color: lighten($slate-gray, 10);
+  background-color: $light-slate-gray;
   padding: 1.5em;
   display: flex;
   flex-direction: row-reverse;
@@ -391,7 +411,7 @@ address {
   border-radius: 7px;
   padding: 0px 3px;
   transition: color 100ms ease;
-  color: lighten($slate-gray, 10);
+  color: $light-slate-gray;
 
   &:hover,
   &:focus {
