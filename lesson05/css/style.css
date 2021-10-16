@@ -183,7 +183,7 @@ nav ul li:not(.close-overlay).active {
 }
 
 main {
-  padding: 2em;
+  padding: 2rem;
   padding-top: 0;
 }
 @media (max-width: 34.9375rem) {
@@ -255,7 +255,7 @@ main a:hover, main a:focus {
 }
 .hero-container {
   position: relative;
-  margin: 0 -2em;
+  margin: 0 -2rem;
 }
 .hero-container::after {
   content: "";

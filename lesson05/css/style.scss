@@ -220,7 +220,7 @@ nav {
 }
 
 main {
-  padding: 2em;
+  padding: 2rem;
   padding-top: 0;
 
   @include small {
@@ -307,7 +307,7 @@ main a {
 
   &-container {
     position: relative;
-    margin: 0 -2em;
+    margin: 0 -2rem;
   }
 
   &-container::after {
