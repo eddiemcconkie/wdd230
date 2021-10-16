@@ -5,7 +5,7 @@ const list = document.querySelector('ul')
 let favoriteChapters = []
 
 addButton.addEventListener('click', (e) => {
-  value = input.value.trim()
+  const value = input.value.trim()
   if (value) {
     addToList(value)
   }
