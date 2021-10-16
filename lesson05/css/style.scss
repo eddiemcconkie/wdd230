@@ -150,6 +150,10 @@ nav {
         @include small {
           padding-inline: 1.5em;
         }
+
+        @include large {
+          padding-block: 0.3em;
+        }
       }
 
       & + li {

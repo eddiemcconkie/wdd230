@@ -121,6 +121,11 @@ nav ul li:not(.close-overlay) a:hover, nav ul li:not(.close-overlay) a:focus {
     padding-inline: 1.5em;
   }
 }
+@media (min-width: 64rem) {
+  nav ul li:not(.close-overlay) a {
+    padding-block: 0.3em;
+  }
+}
 nav ul li:not(.close-overlay) + li {
   border-left: 1px solid #323432;
 }
