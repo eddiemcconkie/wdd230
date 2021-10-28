@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Weather information for Preston, using responsive images"
+      content="Image gallery displaying different types of weather"
     />
-    <title>Chill Earth | Preston</title>
+    <title>Chill Earth | Gallery</title>
 
     <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
 
@@ -24,8 +24,7 @@
     <!-- Scripts -->
     <script src="js/footer.js" defer></script>
     <script src="js/menu.js" defer></script>
-    <script src="js/show-banner.js" defer></script>
-    <script src="js/windchill.js" defer></script>
+    <script src="js/lazyload.js" defer></script>
   </head>
 
   <body>
@@ -112,136 +111,163 @@
         <!-- closeOverlay is a fixed element covering the whole screen, allowing you to close the menu by clicking anywhere off the menu -->
         <li class="close-overlay" id="closeOverlay"></li>
         <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Preston</a></li>
+        <li><a href="../lesson06/preston-6.html">Preston</a></li>
         <li><a href="#">Soda Springs</a></li>
         <li><a href="#">Fish Haven</a></li>
         <li><a href="#">Storm Center</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li class="active"><a href="#">Gallery</a></li>
       </ul>
     </nav>
 
-    <h2 class="banner" style="display: none">
-      Saturday = Preston Pancakes in the Park! <br />9:00 a.m. Saturday at the
-      city park pavilion.
-    </h2>
-
     <main>
-      <h3>Preston Idaho</h3>
-      <section class="hero-section">
-        <div class="hero-container">
+      <h3>Weather Gallery</h3>
+      <section class="gallery">
+        <figure class="gallery-card">
           <img
-            src="images/hero400.jpg"
-            alt="hero"
-            class="hero"
-            sizes="90vw"
-            srcset="
-              images/hero400.jpg   400w,
-              images/hero700.jpg   700w,
-              images/hero1000.jpg 1000w
-            "
+            data-src="images/city.jpg"
+            src="images/placeholder2.jpg"
+            alt="city"
+            class="gallery-img"
           />
-        </div>
+          <figcaption class="gallery-caption">
+            Stormy skies over Boise
+          </figcaption>
+        </figure>
 
-        <section class="weather-summary">
-          <h4>Weather Summary</h4>
-          <p>
-            Currently: Rainy <br />
-            High: <span id="temperature">54</span> &deg;F <br />
-            Wind Chill: <span id="windChill"></span> <br />
-            Humidity: <span id="humidity">95</span>% <br />
-            Wind Speed: <span id="windSpeed">12</span> mph
-          </p>
-        </section>
-      </section>
+        <figure class="gallery-card">
+          <img
+            data-src="images/hills.jpg"
+            src="images/placeholder2.jpg"
+            alt="hills"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Mountain road covered in mist
+          </figcaption>
+        </figure>
 
-      <section>
-        <h4>Five Day Forecast</h4>
-        <div class="forecast">
-          <img src="https://unsplash.it/50" alt="forecast info" />
-          <img src="https://unsplash.it/50" alt="forecast info" />
-          <img src="https://unsplash.it/50" alt="forecast info" />
-          <img src="https://unsplash.it/50" alt="forecast info" />
-          <img src="https://unsplash.it/50" alt="forecast info" />
-        </div>
+        <figure class="gallery-card">
+          <img
+            data-src="images/hurricane.jpg"
+            src="images/placeholder2.jpg"
+            alt="hurricane"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Hurricane over Rexburg
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/iceberg.jpg"
+            src="images/placeholder2.jpg"
+            alt="iceberg"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Melting glaciers in Pocatello
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/forest.jpg"
+            src="images/placeholder2.jpg"
+            alt="forest"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Forest on a cloudy day
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/lightning.jpg"
+            src="images/placeholder2.jpg"
+            alt="lightning"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Lightning over the snake river
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/lights.jpg"
+            src="images/placeholder2.jpg"
+            alt="lights"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            The northern lights as seen from Idaho Falls
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/mountains.jpg"
+            src="images/placeholder2.jpg"
+            alt="mountains"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Big mountains and big clouds
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/ocean.jpg"
+            src="images/placeholder2.jpg"
+            alt="ocean"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            The Twin Falls pacific coast
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/road.jpg"
+            src="images/placeholder2.jpg"
+            alt="road"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            An isolated road on the way to Rigby
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/snow.jpg"
+            src="images/placeholder2.jpg"
+            alt="snow"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Snow-tormented student at BYU-Idaho
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img
+            data-src="images/tornado.jpg"
+            src="images/placeholder2.jpg"
+            alt="tornado"
+            class="gallery-img"
+          />
+          <figcaption class="gallery-caption">
+            Tornado ripping through Nampa
+          </figcaption>
+        </figure>
       </section>
-      <article>
-        <h4>Article Title</h4>
-        <img src="https://unsplash.it/300/200" alt="article" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-          impedit, ullam expedita dolor nemo sequi laborum voluptate possimus
-          ipsa aperiam tenetur consectetur ea voluptatibus ab quaerat corrupti
-          autem eius aspernatur voluptatem nostrum eaque vitae. Blanditiis sequi
-          labore impedit nulla, repellendus fuga quis? Pariatur porro excepturi,
-          odit doloribus quae qui. Atque, sequi, porro dolor nam, ducimus
-          quisquam pariatur maxime quas sit consequatur blanditiis. Vero magni
-          odit, vel eos non pariatur voluptates! Saepe ea dolorem hic officia
-          esse, repellat, aliquam dolore libero eveniet voluptatibus qui quia
-          tempora ipsam quae suscipit maiores sint iusto harum nemo quasi culpa
-          deserunt veritatis. Reprehenderit veniam corrupti, vitae molestiae
-          quod iste animi accusamus expedita dolor facere dignissimos odit
-          dolore enim laudantium placeat sequi unde! Magnam fuga ratione eos
-          repellendus quia commodi praesentium aut sit? Veritatis deserunt ad
-          accusamus laudantium, possimus nam voluptatum minima sit dolorum
-          labore architecto eaque officiis ipsum modi, vero assumenda illum,
-          quam magnam sunt?
-        </p>
-      </article>
     </main>
 
-    <address>
-      <div class="contact">
-        <h4>Contact Information</h4>
-        <p class="large-only">
-          <img
-            src="images/location-dot-solid.svg"
-            alt="location icon"
-            class="icon"
-            width="16"
-          />
-          location
-        </p>
-        <p>
-          <img
-            src="images/phone-solid.svg"
-            alt="phone icon"
-            class="icon"
-            width="16"
-          />
-          phone
-        </p>
-        <p>
-          <img
-            src="images/envelope-solid.svg"
-            alt="envelope icon"
-            class="icon"
-            width="16"
-          />
-          email
-        </p>
-        <div class="social-links">
-          <img
-            src="images/facebook-square-brands.svg"
-            alt="facebook icon"
-            class="icon icon-large large-only facebook"
-            width="48"
-          />
-          <img
-            src="images/instagram-square-brands.svg"
-            alt="instagram icon"
-            class="icon icon-large large-only instagram"
-            width="48"
-          />
-          <img
-            src="images/twitter-square-brands.svg"
-            alt="twitter icon"
-            class="icon icon-large large-only twitter"
-            width="48"
-          />
-        </div>
-      </div>
-      <img class="map" src="images/city-map.jpg" alt="map placeholder" />
-    </address>
     <footer>
       <span class="date"></span>
     </footer>
