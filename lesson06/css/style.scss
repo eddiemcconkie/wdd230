@@ -266,7 +266,8 @@ h3 {
 
 h4 {
   font-size: 1.2rem;
-  color: $eerie-black;
+  // color: $eerie-black;
+  color: black;
 }
 
 button {
@@ -379,7 +380,8 @@ article {
 
 address {
   background-color: $light-slate-gray;
-  color: $eerie-black;
+  // color: $eerie-black;
+  color: black;
   padding: 1.5em;
   display: flex;
   flex-direction: row-reverse;
@@ -399,6 +401,9 @@ address {
   // }
 }
 
+.icon {
+  box-shadow: none;
+}
 .facebook {
   --color: #1877f2;
 }
@@ -413,15 +418,16 @@ address {
 .icon-large {
   font-size: 3rem;
   margin-right: 1rem;
-  background-color: $jet;
+  // background-color: $jet;
   border-radius: 7px;
   padding: 0px 3px;
-  transition: color 100ms ease;
+  transition: background-color 200ms ease;
   color: $light-slate-gray;
 
   &:hover,
   &:focus {
-    color: var(--color);
+    // color: var(--color);
+    background-color: var(--color);
     transform: scale(1.02);
   }
 }
