@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Image gallery displaying different types of weather"
+      content="Fill out a storm report form for your area"
     />
-    <title>Chill Earth | Gallery</title>
+    <title>Chill Earth | Storm Center</title>
 
     <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
 
@@ -120,8 +120,9 @@
 
     <main>
       <form action="thanks.html" method="get">
+        <h3>Report a Storm in Your Area</h3>
         <fieldset>
-          <legend>User Information</legend>
+          <legend>Contact Information</legend>
           <label>
             Full Name
             <input type="text" name="name" pattern="[A-Za-z ]{5,}" required />
@@ -167,8 +168,7 @@
                 name="severity"
                 min="0"
                 max="10"
-                oninput="updateSeverity(this.value)"
-                onchange="updateSeverity(this.value)"
+                id="severityRange"
               />
               <span id="stormSeverity"></span>
             </div>
@@ -205,7 +205,7 @@
           </label>
         </fieldset>
 
-        <input type="submit" value="Send" />
+        <input type="submit" value="Report Storm" />
       </form>
     </main>
 

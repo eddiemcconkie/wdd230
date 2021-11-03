@@ -501,7 +501,6 @@ img {
 }
 
 form {
-  margin-top: 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -511,13 +510,9 @@ form {
   box-shadow: 0 0 5px #323432;
   accent-color: #477c85;
 }
-@media (min-width: 64rem) {
-  form {
-    padding: 2em;
-  }
-}
 form fieldset {
   padding: 0 2em 2em 2em;
+  border: 1px solid #323432;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -531,9 +526,6 @@ form input:not([type=radio]),
 form select,
 form textarea {
   display: block;
-}
-form input:not([type=radio]),
-form select {
   border-radius: 5px;
   border: 1px solid #323432;
   padding: 0.5em;
@@ -555,7 +547,8 @@ form .range-container {
 }
 form .range-container span {
   color: #2b4b50;
-  min-width: 1ch;
+  min-width: 2ch;
+  align-self: center;
 }
 form label {
   margin-top: 1em;
@@ -564,11 +557,12 @@ form .radio-option {
   margin-top: 0.5em;
 }
 form textarea {
-  margin-top: 0.5em;
-  width: 100%;
   resize: vertical;
+  min-height: 5rem;
+  max-height: 15rem;
 }
 form input[type=submit] {
+  margin-left: 2.5em;
   max-width: 10rem;
   background-color: #599ca6;
 }
@@ -579,5 +573,31 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 @media (max-width: 34.9375rem) {
   form input[type=submit] {
     margin: 0 auto;
+  }
+}
+form h3 {
+  margin: 0.5em 0;
+}
+@media (max-width: 34.9375rem) {
+  form h3,
+form fieldset legend {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 35rem) {
+  form {
+    margin: 1em;
+    margin-top: 3em;
+    padding: 2em;
+  }
+}
+@media (min-width: 64rem) {
+  form {
+    padding: 2em 6em;
+    margin: 4em;
+  }
+  form input:not([type=radio]),
+form select {
+    padding: 0.25em 0.5em;
   }
 }/*# sourceMappingURL=style.css.map */

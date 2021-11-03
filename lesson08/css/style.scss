@@ -522,7 +522,7 @@ img {
 }
 
 form {
-  margin-top: 2em;
+  // margin-top: 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -532,12 +532,9 @@ form {
   box-shadow: 0 0 5px $jet;
   accent-color: $slate-gray;
 
-  @include large {
-    padding: 2em;
-  }
-
   fieldset {
     padding: 0 2em 2em 2em;
+    border: 1px solid $jet;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -548,14 +545,11 @@ form {
       padding: 0.5em;
     }
   }
+
   input:not([type='radio']),
   select,
   textarea {
     display: block;
-  }
-
-  input:not([type='radio']),
-  select {
     border-radius: 5px;
     border: 1px solid $jet;
     padding: 0.5em;
@@ -577,7 +571,8 @@ form {
 
     span {
       color: $dark-slate-gray;
-      min-width: 1ch;
+      min-width: 2ch;
+      align-self: center;
     }
   }
 
@@ -588,26 +583,50 @@ form {
     margin-top: 0.5em;
   }
   textarea {
-    margin-top: 0.5em;
-    width: 100%;
     resize: vertical;
+    min-height: 5rem;
+    max-height: 15rem;
   }
 
   input[type='submit'] {
+    margin-left: 2.5em;
     max-width: 10rem;
-    // background-color: $maize-crayola;
     background-color: lighten($slate-gray, 10);
-    // background-color: $slate-gray;
     &:hover,
     &:focus {
-      // background-color: $light-maize-crayola;
-      // background-color: $light-slate-gray;
       background-color: lighten($slate-gray, 15);
       transform: scale(1.01);
     }
 
     @include small {
       margin: 0 auto;
+    }
+  }
+
+  h3 {
+    margin: 0.5em 0;
+  }
+
+  @include small {
+    h3,
+    fieldset legend {
+      margin: 0 auto;
+    }
+  }
+
+  @include medium {
+    margin: 1em;
+    margin-top: 3em;
+    padding: 2em;
+  }
+
+  @include large {
+    padding: 2em 6em;
+    margin: 4em;
+
+    input:not([type='radio']),
+    select {
+      padding: 0.25em 0.5em;
     }
   }
 }
