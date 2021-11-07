@@ -8,13 +8,15 @@ table {
   box-shadow: 10px 10px 10px #6f96ad;
 }
 
-thead:first-of-type,
+/* thead:first-of-type, */
+thead tr:first-of-type,
 tfoot {
   font-size: 1.5rem;
   background-color: #7fb9c2;
 }
 
-thead:last-of-type,
+/* thead:last-of-type, */
+thead tr:last-of-type,
 #highlight {
   color: #fff;
   background-color: #628ca6;
