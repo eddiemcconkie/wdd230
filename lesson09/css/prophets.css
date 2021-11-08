@@ -1,0 +1,69 @@
+:root {
+  font-family: 'Noto Serif', serif;
+}
+
+h1 {
+  color: #4f6d7a;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: #4f6d7a;
+  font-size: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  margin: 1.5em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1em;
+  padding: 1em;
+  gap: 1em;
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  background-color: #c0d6df;
+}
+
+.card {
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: #dbe9ee;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  box-shadow: 0 0 5px #4f6d7a;
+  align-items: center;
+}
+
+.card p {
+  /* line-height: 1.2rem; */
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.card img {
+  box-shadow: 0 0 10px #000;
+  margin: 0.5em 2em 2em 2em;
+  width: 80%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 35rem) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25em;
+  }
+}
