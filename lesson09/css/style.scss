@@ -314,6 +314,13 @@ main a {
   &-container {
     position: relative;
     margin: 0 -2rem;
+
+    @include medium {
+      margin-top: 2em;
+    }
+    @include small {
+      margin-top: -1em;
+    }
   }
 
   &-container::after {

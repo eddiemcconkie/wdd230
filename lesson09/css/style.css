@@ -263,6 +263,16 @@ main a:hover, main a:focus {
   position: relative;
   margin: 0 -2rem;
 }
+@media (min-width: 35rem) {
+  .hero-container {
+    margin-top: 2em;
+  }
+}
+@media (max-width: 34.9375rem) {
+  .hero-container {
+    margin-top: -1em;
+  }
+}
 .hero-container::after {
   content: "";
   position: absolute;

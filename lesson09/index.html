@@ -21,6 +21,7 @@
     <!-- Scripts -->
     <script src="js/footer.js" defer></script>
     <script src="js/menu.js" defer></script>
+    <script src="js/lazyload.js" defer></script>
     <script src="js/load-town-data.js" defer></script>
   </head>
 
@@ -118,7 +119,12 @@
 
     <main>
       <div class="hero-container">
-        <img src="images/hero.jpg" alt="" class="hero" />
+        <img
+          src="images/placeholder.jpg"
+          data-src="images/hero.jpg"
+          alt=""
+          class="hero"
+        />
       </div>
 
       <h3>Welcome to Chill Earth!</h3>
@@ -176,7 +182,12 @@
           />
         </div>
       </div>
-      <img class="map" src="images/city-map.jpg" alt="map placeholder" />
+      <img
+        class="map"
+        src="images/placeholder.jpg"
+        data-src="images/city-map.jpg"
+        alt="map placeholder"
+      />
     </address>
     <footer>
       <span class="date"></span>

@@ -20,7 +20,7 @@ const loadTownData = async () => {
       return `
       <li class="town">
       <div class="img-container">
-        <img src="images/${photo}" alt="${name}" width="400" height="400">
+        <img src="images/placeholder.jpg" data-src="images/${photo}" alt="${name}" width="400" height="400">
         <h3 class="large-only">${name}</h3>
       </div>
         <div class="town-data">
@@ -36,6 +36,9 @@ const loadTownData = async () => {
     .join('')
 
   townEl.innerHTML = townHtml
+
+  const townImages = document.querySelectorAll('[data-src]')
+  addLazyLoad(townImages)
 }
 
 loadTownData()
