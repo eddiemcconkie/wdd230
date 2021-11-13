@@ -516,6 +516,10 @@ address {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include large {
+      justify-content: flex-start;
+    }
   }
 
   .img-container {

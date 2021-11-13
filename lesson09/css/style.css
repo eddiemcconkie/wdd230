@@ -496,6 +496,11 @@ svg {
     flex-basis: 50%;
   }
 }
+@media (min-width: 64rem) {
+  .town-data {
+    justify-content: flex-start;
+  }
+}
 .town .img-container {
   position: relative;
 }
