@@ -327,6 +327,7 @@ main a:hover, main a:focus {
 .forecast th {
   background-color: #6b8e7d;
   color: #f6f8f2;
+  text-shadow: 0 0 2px #323432;
 }
 .forecast td {
   background-color: #d0dcd6;
