@@ -266,8 +266,8 @@ h3 {
 
 h4 {
   font-size: 1.2rem;
-  // color: $eerie-black;
-  color: black;
+  margin-bottom: 0.5em;
+  color: $jet;
 }
 
 button {
@@ -305,7 +305,6 @@ main a {
   height: 100%;
   max-height: 280px;
   object-fit: cover;
-  overflow: hidden;
 
   &-section {
     position: relative;
@@ -328,6 +327,16 @@ main a {
 }
 .weather-summary {
   position: static;
+
+  img {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+    line-height: 2;
+  }
+
   @include large {
     position: absolute;
     top: 0;
@@ -337,19 +346,68 @@ main a {
     margin: 1em;
     max-width: 20rem;
     box-shadow: 0 0 5px $jet;
+
+    img {
+      position: absolute;
+      bottom: 5em;
+      right: 2em;
+      box-shadow: none;
+      filter: drop-shadow(0 0 2px #999);
+    }
+
+    h4 {
+      margin: 0.5em 0;
+    }
+
+    p {
+      line-height: 1.5;
+    }
   }
 }
 
-.forecast {
-  display: flex;
-  // flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: $alabaster;
-  padding: 1em;
+// .forecast {
+//   display: flex;
+//   // flex-wrap: wrap;
+//   justify-content: space-around;
+//   background-color: $alabaster;
+//   padding: 1em;
 
-  img {
-    margin: 0.1em;
-    flex: 0 1 auto;
+//   img {
+//     margin: 0.1em;
+//     flex: 0 1 auto;
+//   }
+// }
+.forecast {
+  border-collapse: collapse;
+  box-shadow: 0 0 5px $jet;
+  table-layout: auto;
+
+  &-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 0.5em 1em;
+  }
+  th + th,
+  td + td {
+    border-left: 1px solid $jet;
+  }
+  th {
+    background-color: darken($timberwolf, 35);
+    color: $ivory;
+  }
+  td {
+    background-color: $timberwolf;
+  }
+  td > img {
+    box-shadow: none;
+    // text-align: center;
+    margin: auto;
+    display: block;
+    filter: drop-shadow(0 0 2px #999);
   }
 }
 
@@ -377,8 +435,6 @@ article {
 
 address {
   background-color: $light-slate-gray;
-  // color: $eerie-black;
-  color: black;
   padding: 1.5em;
   display: flex;
   flex-direction: row-reverse;
@@ -393,11 +449,14 @@ address {
     flex: 1 1 50%;
   }
 
-  // section {
-  //   flex: 1 1 50%;
-  // }
+  em {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-block: 1em;
+    color: black;
+  }
 }
-
 .icon {
   box-shadow: none;
 }
@@ -415,7 +474,6 @@ address {
 .icon-large {
   font-size: 3rem;
   margin-right: 1rem;
-  // background-color: $jet;
   border-radius: 7px;
   padding: 0px 3px;
   transition: background-color 200ms ease;
@@ -423,7 +481,6 @@ address {
 
   &:hover,
   &:focus {
-    // color: var(--color);
     background-color: var(--color);
     transform: scale(1.02);
   }
