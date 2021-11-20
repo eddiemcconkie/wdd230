@@ -440,6 +440,7 @@ address {
   display: flex;
   flex-direction: row-reverse;
   gap: 3em;
+  color: black;
 
   @include small {
     flex-direction: column;
@@ -455,7 +456,6 @@ address {
     font-weight: bold;
     font-size: 1.2rem;
     margin-block: 1em;
-    color: black;
   }
 }
 .icon {
