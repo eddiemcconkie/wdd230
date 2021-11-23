@@ -46,7 +46,7 @@ header {
 header .logo {
   padding: 0.5em 0;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   header {
     padding: 0.5em;
     padding-right: 3.5em;
@@ -86,7 +86,7 @@ nav ul {
   box-shadow: 0 0 5px #323432;
   z-index: 10;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   nav ul {
     position: absolute;
     top: 0;
@@ -116,7 +116,7 @@ nav ul li:not(.close-overlay) a {
 nav ul li:not(.close-overlay) a:hover, nav ul li:not(.close-overlay) a:focus {
   transform: scale(1.03);
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   nav ul li:not(.close-overlay) a {
     padding-inline: 1.5em;
   }
@@ -129,7 +129,7 @@ nav ul li:not(.close-overlay) a:hover, nav ul li:not(.close-overlay) a:focus {
 nav ul li:not(.close-overlay) + li {
   border-left: 1px solid #323432;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   nav ul li:not(.close-overlay) + li {
     border-top: 1px solid #323432;
     border-left: none;
@@ -174,7 +174,7 @@ nav ul li:not(.close-overlay).active {
   margin-top: 1em;
   line-height: 2.5rem;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   .banner {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -188,7 +188,7 @@ nav ul li:not(.close-overlay).active {
 }
 
 main {
-  padding: 0 2rem 1rem 2rem;
+  padding: 0.5rem 2rem 1rem 2rem;
 }
 
 footer {
@@ -249,6 +249,7 @@ main a:hover, main a:focus {
   max-height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
+  box-shadow: none;
 }
 .hero-section {
   position: relative;
@@ -266,6 +267,7 @@ main a:hover, main a:focus {
   background: linear-gradient(rgba(43, 75, 80, 0.5), rgba(43, 75, 80, 0));
 }
 .hero-title {
+  z-index: 20;
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -273,9 +275,24 @@ main a:hover, main a:focus {
   text-align: center;
   padding: 0 1rem;
   margin: 0;
-  color: #f6f8f2;
+  color: white;
+  text-shadow: 0 0 4px #242423;
   width: 100%;
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+.hero-title-right {
+  transform: none;
+  text-align: right;
+  right: 0;
+  max-width: 50%;
+  left: auto;
+}
+@media (max-width: 34.97rem) {
+  .hero-title-right {
+    position: absolute;
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .weather-summary {
@@ -298,7 +315,7 @@ main a:hover, main a:focus {
 .weather-summary p {
   line-height: 1.5;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   .weather-summary {
     position: static;
     transform: none;
@@ -309,12 +326,13 @@ main a:hover, main a:focus {
 
 .forecast {
   border-collapse: collapse;
-  box-shadow: 0 0 5px #323432;
   table-layout: auto;
 }
 .forecast-container {
   max-width: 100%;
   overflow-x: auto;
+  display: inline-block;
+  box-shadow: 0 0 5px #323432;
 }
 .forecast th,
 .forecast td {
@@ -367,7 +385,7 @@ address {
   gap: 3em;
   color: black;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   address {
     flex-direction: column;
     gap: 1em;
@@ -418,13 +436,13 @@ address em {
      object-fit: cover;
   max-height: 250px;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   .map {
     max-height: 150px;
   }
 }
 
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   .large-only {
     display: none;
   }
@@ -612,6 +630,7 @@ img {
   border-radius: 5px;
   box-shadow: 0 0 5px #323432;
   position: relative;
+  background-color: white;
   transition: transform 200ms ease;
 }
 @media (min-width: 64rem) {
@@ -712,7 +731,7 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   background-color: #6aa5af;
   transform: scale(1.01);
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   form input[type=submit] {
     margin: 0 auto;
   }
@@ -720,7 +739,7 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 form h3 {
   margin: 0.5em 0;
 }
-@media (max-width: 34.9375rem) {
+@media (max-width: 34.97rem) {
   form h3,
 form fieldset legend {
     margin: 0 auto;

@@ -4,7 +4,7 @@ $m-l-breakpoint: 64rem;
 // Inline media queries
 @mixin small {
   // There's a weird 1px spot in between medium and small that has a weird overlap
-  @media (max-width: ($s-m-breakpoint - 0.0625rem)) {
+  @media (max-width: ($s-m-breakpoint - 0.03rem)) {
     @content;
   }
 }
@@ -224,7 +224,7 @@ nav {
 }
 
 main {
-  padding: 0 2rem 1rem 2rem;
+  padding: 0.5rem 2rem 1rem 2rem;
 }
 
 footer {
@@ -300,6 +300,7 @@ main a {
   height: 100%;
   max-height: 280px;
   object-fit: cover;
+  box-shadow: none;
 
   &-section {
     position: relative;
@@ -321,6 +322,7 @@ main a {
   }
 
   &-title {
+    z-index: 20;
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -328,10 +330,26 @@ main a {
     text-align: center;
     padding: 0 1rem;
     margin: 0;
-    color: $ivory;
+    color: white;
+    text-shadow: 0 0 4px $eerie-black;
     width: 100%;
     // font-size: 2rem;
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(2rem, 6vw, 3rem);
+
+    &-right {
+      transform: none;
+      text-align: right;
+      right: 0;
+      max-width: 50%;
+      left: auto;
+
+      @include small {
+        // right: auto;
+        position: absolute;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
   }
 }
 .weather-summary {
@@ -382,12 +400,13 @@ main a {
 // }
 .forecast {
   border-collapse: collapse;
-  box-shadow: 0 0 5px $jet;
   table-layout: auto;
 
   &-container {
     max-width: 100%;
     overflow-x: auto;
+    display: inline-block;
+    box-shadow: 0 0 5px $jet;
   }
 
   th,
@@ -653,6 +672,7 @@ img {
     border-radius: 5px;
     box-shadow: 0 0 5px $jet;
     position: relative;
+    background-color: white;
 
     transition: transform 200ms ease;
     @include large {
