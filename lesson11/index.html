@@ -113,7 +113,18 @@
 
     <main>
       <div class="hero-container">
-        <img src="images/placeholder.jpg" data-src="images/home-hero.jpg" alt="" class="hero" />
+        <img
+          src="images/placeholder.jpg"
+          data-src="images/home-hero400.jpg"
+          alt="hero"
+          class="hero"
+          sizes="90vw"
+          srcset="
+            images/home-hero400.jpg   400w,
+            images/home-hero700.jpg   700w,
+            images/home-hero1000.jpg 1000w
+          "
+        />
         <h3 class="hero-title">Welcome to Chill Earth!</h3>
       </div>
 

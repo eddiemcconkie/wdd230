@@ -1,5 +1,5 @@
-const loadForecast = async () => {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=06b126cabcd76944d0ed3ce59ef52053`
+const loadForecast = async (cityId) => {
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=imperial&appid=06b126cabcd76944d0ed3ce59ef52053`
 
   const forecastData = await fetch(apiUrl)
   const forecastJson = await forecastData.json()
@@ -33,5 +33,3 @@ const loadForecast = async () => {
     trBody.appendChild(td)
   })
 }
-
-loadForecast()

@@ -8,7 +8,7 @@
       name="description"
       content="Find daily weather information and a 5-day forecast for Preston, Idaho, and view events in the area"
     />
-    <title>Chill Earth | Preston</title>
+    <title>Chill Earth | Soda Springs</title>
 
     <link rel="shortcut icon" href="icons/logo.svg" type="image/x-icon" />
 
@@ -21,14 +21,14 @@
     <!-- Scripts -->
     <script src="js/footer.js" defer></script>
     <script src="js/menu.js" defer></script>
-    <script src="js/show-banner.js" defer></script>
+    <!-- <script src="js/show-banner.js" defer></script> -->
     <script src="js/lazyload.js" defer></script>
     <script src="js/weather-summary.js" async></script>
     <script src="js/forecast.js" async></script>
     <script src="js/google-map.js" defer></script>
     <script
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbz_IWAir45T6urF5TrqjtQlmokesotho&callback=initMapPreston"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbz_IWAir45T6urF5TrqjtQlmokesotho&callback=initMapSodaSprings"
     ></script>
   </head>
 
@@ -110,33 +110,33 @@
         <!-- closeOverlay is a fixed element covering the whole screen, allowing you to close the menu by clicking anywhere off the menu -->
         <li class="close-overlay" id="closeOverlay"></li>
         <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="preston.html">Preston</a></li>
-        <li><a href="soda-springs.html">Soda Springs</a></li>
+        <li><a href="preston.html">Preston</a></li>
+        <li class="active"><a href="soda-springs.html">Soda Springs</a></li>
         <li><a href="fish-haven.html">Fish Haven</a></li>
         <li><a href="stormcenter.html">Storm Center</a></li>
         <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </nav>
 
-    <h2 class="banner" style="display: none">
+    <!-- <h2 class="banner" style="display: none">
       Saturday = Preston Pancakes in the Park! <br />9:00 a.m. Saturday at the city park pavilion.
-    </h2>
+    </h2> -->
 
     <main>
       <section class="hero-section">
         <div class="hero-container">
           <img
-            src="images/preston-hero400.jpg"
+            src="images/sodasprings-hero400.jpg"
             alt="hero"
             class="hero"
             sizes="90vw"
             srcset="
-              images/preston-hero400.jpg   400w,
-              images/preston-hero700.jpg   700w,
-              images/preston-hero1000.jpg 1000w
+              images/sodasprings-hero400.jpg   400w,
+              images/sodasprings-hero700.jpg   700w,
+              images/sodasprings-hero1000.jpg 1000w
             "
           />
-          <h3 class="hero-title hero-title-right">Preston, Idaho</h3>
+          <h3 class="hero-title hero-title-right">Soda Springs, Idaho</h3>
         </div>
 
         <section class="weather-summary">
@@ -208,13 +208,12 @@
           />
         </div>
       </div>
-      <div id="map"></div>
-      <!-- <img
+      <img
         class="map"
         data-src="images/city-map.webp"
         src="images/placeholder.jpg"
         alt="map placeholder"
-      /> -->
+      />
     </address>
     <footer>
       <span class="date"></span>
@@ -229,8 +228,9 @@
       })
     </script>
     <script>
-      loadWeatherSummary(5604473)
-      loadForecast(5604473)
+      loadWeatherSummary(5607916)
+      loadForecast(5607916)
+      loadMap(5607916)
     </script>
   </body>
 </html>

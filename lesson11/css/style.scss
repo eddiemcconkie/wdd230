@@ -197,7 +197,7 @@ nav {
   font-size: 1.2rem;
   color: $jet;
   // Above box shadow
-  z-index: 11;
+  z-index: 15;
 
   @include medium {
     visibility: hidden;
@@ -322,7 +322,7 @@ main a {
   }
 
   &-title {
-    z-index: 20;
+    z-index: 1;
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -386,18 +386,6 @@ main a {
   }
 }
 
-// .forecast {
-//   display: flex;
-//   // flex-wrap: wrap;
-//   justify-content: space-around;
-//   background-color: $alabaster;
-//   padding: 1em;
-
-//   img {
-//     margin: 0.1em;
-//     flex: 0 1 auto;
-//   }
-// }
 .forecast {
   border-collapse: collapse;
   table-layout: auto;
@@ -437,7 +425,6 @@ main a {
 article {
   display: flex;
   flex-direction: column;
-  // flex-direction: column-reverse;
 
   img {
     width: 90%;

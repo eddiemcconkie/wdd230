@@ -158,7 +158,7 @@ nav ul li:not(.close-overlay).active {
   border-radius: 0.5rem 0 0 0;
   font-size: 1.2rem;
   color: #323432;
-  z-index: 11;
+  z-index: 15;
 }
 @media (min-width: 35rem) {
   .menu-button {
@@ -267,7 +267,7 @@ main a:hover, main a:focus {
   background: linear-gradient(rgba(43, 75, 80, 0.5), rgba(43, 75, 80, 0));
 }
 .hero-title {
-  z-index: 20;
+  z-index: 1;
   position: absolute;
   bottom: 2rem;
   left: 50%;

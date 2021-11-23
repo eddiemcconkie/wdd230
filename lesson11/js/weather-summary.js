@@ -12,8 +12,8 @@ function calculateWindChill(temperature, windSpeed) {
   return 'N/A'
 }
 
-const loadWeatherSummary = async () => {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&appid=06b126cabcd76944d0ed3ce59ef52053`
+const loadWeatherSummary = async (cityId) => {
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=imperial&appid=06b126cabcd76944d0ed3ce59ef52053`
 
   const weatherData = await fetch(apiUrl)
   const weatherJson = await weatherData.json()
@@ -41,5 +41,3 @@ const loadWeatherSummary = async () => {
     Condition: ${description}
   `
 }
-
-loadWeatherSummary()
