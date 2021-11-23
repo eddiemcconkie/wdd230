@@ -4,7 +4,7 @@ $m-l-breakpoint: 64rem;
 // Inline media queries
 @mixin small {
   // There's a weird 1px spot in between medium and small that has a weird overlap
-  @media (max-width: $s-m-breakpoint - 0.0625rem) {
+  @media (max-width: ($s-m-breakpoint - 0.0625rem)) {
     @content;
   }
 }
@@ -323,10 +323,7 @@ main a {
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      rgba($dark-slate-gray, 0.5),
-      rgba($dark-slate-gray, 0)
-    );
+    background: linear-gradient(rgba($dark-slate-gray, 0.5), rgba($dark-slate-gray, 0));
   }
 }
 .weather-summary {

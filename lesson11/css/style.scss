@@ -224,12 +224,7 @@ nav {
 }
 
 main {
-  padding: 2rem;
-  padding-top: 0;
-
-  @include small {
-    padding: 1em;
-  }
+  padding: 0 2rem 1rem 2rem;
 }
 
 footer {
@@ -324,6 +319,20 @@ main a {
     height: 100%;
     background: linear-gradient(rgba($dark-slate-gray, 0.5), rgba($dark-slate-gray, 0));
   }
+
+  &-title {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0;
+    color: $ivory;
+    width: 100%;
+    // font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
 }
 .weather-summary {
   position: static;
@@ -333,23 +342,29 @@ main a {
     line-height: 2;
   }
 
-  @include large {
-    position: absolute;
-    top: 0;
-    // color: $jet;
-    background-color: $alabaster;
-    padding: 1em;
-    margin: 1em;
-    max-width: 20rem;
-    box-shadow: 0 0 5px $jet;
+  // @include medium {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $alabaster;
+  padding: 1em;
+  max-width: 20rem;
+  box-shadow: 0 0 5px $jet;
 
-    h4 {
-      margin: 0.5em 0;
-    }
+  h4 {
+    margin: 0.5em 0;
+  }
 
-    p {
-      line-height: 1.5;
-    }
+  p {
+    line-height: 1.5;
+  }
+  // }
+
+  @include small {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 2rem auto;
   }
 }
 
@@ -498,4 +513,288 @@ address {
   border: $dark-slate-gray 2px dashed;
   margin-block: 1em;
   background-color: $alabaster;
+}
+
+// Home Page
+.towns {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+
+  @include large {
+    flex-direction: row;
+  }
+}
+
+.town {
+  background-color: $alabaster;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  width: 100%;
+
+  @include medium {
+    flex-direction: row;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include large {
+    // deals with specificity
+    &:nth-child(n) {
+      flex-direction: column;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    height: auto;
+  }
+
+  &-data {
+    p {
+      margin: 2% 0;
+    }
+
+    margin-left: 1em;
+
+    @include medium {
+      flex-basis: 50%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include large {
+      justify-content: flex-start;
+    }
+  }
+
+  .img-container {
+    position: relative;
+
+    @include medium {
+      flex-basis: 50%;
+    }
+  }
+
+  h3 {
+    margin: 0;
+
+    &.large-only {
+      display: none;
+      position: absolute;
+      bottom: 0.5em;
+      left: 0.5em;
+      font-size: 1.7rem;
+      color: $ivory;
+      text-shadow: 0 0 5px $eerie-black;
+
+      @include large {
+        display: block;
+      }
+    }
+
+    &.medium-and-down {
+      display: block;
+
+      @include large {
+        display: none;
+      }
+    }
+  }
+}
+
+// Gallery
+// section.lazy-load {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 1em;
+//   gap: 1em;
+// }
+
+img {
+  filter: blur(0);
+  transition: filter 300ms ease;
+}
+
+[data-src] {
+  filter: blur(0.2em);
+  position: relative;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+
+  @include medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include large {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &-card {
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $jet;
+    position: relative;
+
+    transition: transform 200ms ease;
+    @include large {
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    @include large {
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 5px;
+        box-shadow: 0 0 20px $jet;
+        transition: opacity 200ms ease;
+        opacity: 0;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-img {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &-caption {
+    padding: 0.5em;
+  }
+}
+
+// Storm Center
+form {
+  // margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: $alabaster;
+  border-radius: 5px;
+  box-shadow: 0 0 5px $jet;
+  accent-color: $slate-gray;
+
+  fieldset {
+    padding: 0 2em 2em 2em;
+    border: 1px solid $jet;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    legend {
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 0.5em;
+    }
+  }
+
+  input:not([type='radio']),
+  select,
+  textarea {
+    display: block;
+    border-radius: 5px;
+    border: 1px solid $jet;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 100%;
+    max-width: 30rem;
+  }
+  input[type='range'] {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  .range-container {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    gap: 1em;
+    padding-top: 0.3em;
+
+    span {
+      color: $dark-slate-gray;
+      min-width: 2ch;
+      align-self: center;
+    }
+  }
+
+  label {
+    margin-top: 1em;
+  }
+  .radio-option {
+    margin-top: 0.5em;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 5rem;
+    max-height: 15rem;
+  }
+
+  input[type='submit'] {
+    margin-left: 2.5em;
+    max-width: 10rem;
+    background-color: lighten($slate-gray, 10);
+    &:hover,
+    &:focus {
+      background-color: lighten($slate-gray, 15);
+      transform: scale(1.01);
+    }
+
+    @include small {
+      margin: 0 auto;
+    }
+  }
+
+  h3 {
+    margin: 0.5em 0;
+  }
+
+  @include small {
+    h3,
+    fieldset legend {
+      margin: 0 auto;
+    }
+  }
+
+  @include medium {
+    margin: 1em;
+    margin-top: 3em;
+    padding: 2em;
+  }
+
+  @include large {
+    padding: 2em 6em;
+    margin: 4em;
+
+    input:not([type='radio']),
+    select {
+      padding: 0.25em 0.5em;
+    }
+  }
 }
