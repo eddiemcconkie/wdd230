@@ -15,6 +15,55 @@ footer {
   padding: 1rem;
 }
 
+svg {
+  overflow: visible;
+}
+
+#logo {
+  transform-origin: center;
+  transition: transform 100ms ease;
+}
+
+#logo:hover {
+  transform: scale(1.02);
+}
+
+#waterHighlight {
+  transform-origin: center;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#logo:hover #waterHighlight {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -66,10 +115,6 @@ header .logo {
     width: 60%;
     height: 60%;
   }
-}
-
-img {
-  box-shadow: 0 0 2px #323432;
 }
 
 nav {
@@ -249,7 +294,7 @@ main a:hover, main a:focus {
   max-height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: none;
+  box-shadow: 0 1px 2px #323432;
 }
 .hero-section {
   position: relative;
@@ -351,7 +396,6 @@ main a:hover, main a:focus {
   background-color: #d0dcd6;
 }
 .forecast td > img {
-  box-shadow: none;
   margin: auto;
   display: block;
   filter: drop-shadow(0 0 2px #999);
@@ -365,6 +409,7 @@ article img {
   width: 90%;
   margin: auto;
   order: 1;
+  box-shadow: 0 0 2px #323432;
 }
 @media (min-width: 35rem) {
   article {
@@ -374,6 +419,7 @@ article img {
     margin: 0 0 1em 1em;
     float: right;
     width: auto;
+    box-shadow: 0 0 2px #323432;
   }
 }
 
@@ -400,9 +446,8 @@ address em {
   font-size: 1.2rem;
   margin-block: 1em;
 }
-
-.icon {
-  box-shadow: none;
+address #map {
+  box-shadow: 0 0 2px #323432;
 }
 
 .facebook {
@@ -448,62 +493,6 @@ address em {
   }
 }
 
-svg {
-  overflow: visible;
-}
-
-#logo {
-  transform-origin: center;
-  transition: transform 100ms ease;
-}
-
-#logo:hover {
-  transform: scale(1.02);
-}
-
-#waterHighlight {
-  transform-origin: center;
-  -webkit-animation-name: spin;
-          animation-name: spin;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-#logo:hover #waterHighlight {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-
-@-webkit-keyframes spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0);
-  }
-}
-.placeholder {
-  padding: 1em;
-  border: #2b4b50 2px dashed;
-  margin-block: 1em;
-  background-color: #e8edde;
-}
-
 .towns {
   list-style: none;
   padding: 0;
@@ -546,6 +535,7 @@ svg {
   height: 100%;
   aspect-ratio: 1;
   height: auto;
+  box-shadow: 0 0 2px #323432;
 }
 .town-data {
   margin-left: 1em;
@@ -654,7 +644,6 @@ img {
 }
 .gallery-img {
   width: 100%;
-  box-shadow: none;
   border-radius: 5px 5px 0 0;
 }
 .gallery-caption {
