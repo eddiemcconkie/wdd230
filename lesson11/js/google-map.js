@@ -15,11 +15,9 @@ function initMapPreston() {
 }
 
 function initMapFishHaven() {
-  // coordinates for fish haven, idaho
   initMap(42.0372, -111.396)
 }
 
 function initMapSodaSprings() {
-  // coordinates for soda springs, idaho
   initMap(42.6544, -111.6047)
 }
