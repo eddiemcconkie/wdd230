@@ -13,7 +13,8 @@ const loadForecast = async (cityId) => {
   forecastTable.appendChild(trBody)
 
   forecast.forEach((day) => {
-    const date = new Date(day.dt_txt)
+    // Replacing the space with a 'T' fixes support for iOS Safari
+    const date = new Date(day.dt_txt.replace(/\s/, 'T'))
     const dayOfWeek = date.toLocaleString('default', { weekday: 'short' })
 
     const th = document.createElement('th')
