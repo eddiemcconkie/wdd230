@@ -168,6 +168,11 @@
           vero assumenda illum, quam magnam sunt?
         </p>
       </article>
+
+      <section class="event">
+        <h4 class="event-title">Upcoming Events</h4>
+        <ul id="events" class="event-list"></ul>
+      </section>
     </main>
 
     <address>
@@ -213,14 +218,10 @@
         </div>
       </div>
       <div id="map"></div>
-      <!-- <img
-        class="map"
-        data-src="images/city-map.webp"
-        src="images/placeholder.jpg"
-        alt="map placeholder"
-      /> -->
     </address>
     <footer>
+      <span>&copy;2021 Chill Earth | BYU - Idaho | Eddie McConkie</span>
+      <br />
       <span class="date"></span>
     </footer>
 
@@ -234,9 +235,11 @@
     </script>
     <script src="js/weather-summary.js"></script>
     <script src="js/forecast.js"></script>
+    <script src="js/load-events.js"></script>
     <script>
       loadWeatherSummary(5607916)
       loadForecast(5607916)
+      loadEvents('Soda Springs')
     </script>
   </body>
 </html>

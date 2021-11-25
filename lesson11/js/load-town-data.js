@@ -2,6 +2,12 @@ const townEl = document.getElementById('towns')
 
 const townDataUrl = 'https://byui-cit230.github.io/weather/data/towndata.json'
 
+const links = {
+  'Preston': 'preston.html',
+  'Soda Springs': 'soda-springs.html',
+  'Fish Haven': 'fish-haven.html',
+}
+
 const loadTownData = async () => {
   const townData = await fetch(townDataUrl)
   const townDataJson = await townData.json()
@@ -9,22 +15,18 @@ const loadTownData = async () => {
   const displayedTowns = ['Fish Haven', 'Preston', 'Soda Springs']
   const townHtml = displayedTowns
     .map((town) => {
-      const {
-        photo,
-        name,
-        motto,
-        yearFounded,
-        currentPopulation,
-        averageRainfall
-      } = towns.find((t) => t.name === town)
+      const { photo, name, motto, yearFounded, currentPopulation, averageRainfall } = towns.find(
+        (t) => t.name === town
+      )
+      const link = links[name]
       return `
       <li class="town">
-      <div class="img-container">
-        <img src="images/placeholder.jpg" data-src="images/${photo}" alt="${name}" width="400" height="400">
-        <h3 class="large-only">${name}</h3>
-      </div>
+        <div class="img-container">
+          <img src="images/placeholder.jpg" data-src="images/${photo}" alt="${name}" width="350" height="350">
+          <h3 class="large-only"><a href="${link}">${name}</a></h3>
+        </div>
         <div class="town-data">
-          <h3 class="medium-and-down">${name}</h3>
+          <h3 class="medium-and-down"><a href="${link}">${name}</a></h3>
           <p><strong><em>${motto}</em></strong></p>
           <p>Year Founded: ${yearFounded}</p>
           <p>Population: ${currentPopulation}</p>
