@@ -532,7 +532,6 @@ address #map {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  aspect-ratio: 1/1;
   height: 100%;
 }
 .town-data {
