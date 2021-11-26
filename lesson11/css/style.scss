@@ -587,9 +587,6 @@ address {
     background-image: var(--image-url);
     background-position: center;
     background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
 
     @include medium {
       flex-basis: 50%;

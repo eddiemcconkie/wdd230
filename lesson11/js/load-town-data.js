@@ -36,7 +36,10 @@ const loadTownData = async () => {
       // `
       return `
       <li class="town">
-        <div class="town-img-container" style="--image-url: url(../images/${photo})">
+        <div class="town-img-container" style="--image-url: url(../images/${photo.replace(
+          'jpg',
+          'webp'
+        )})">
           <h3 class="large-only"><a href="${link}">${name}</a></h3>
         </div>
         <div class="town-data">
