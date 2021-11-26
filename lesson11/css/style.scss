@@ -587,13 +587,13 @@ address {
   .img-container {
     position: relative;
     max-height: 250px;
-    // overflow: hidden;
+    overflow: hidden;
     box-shadow: 0 0 2px $jet;
 
-    @supports not (aspect-ratio: 1 / 1) {
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-    }
+    // @supports not (aspect-ratio: 1 / 1) {
+    // overflow: hidden;
+    // aspect-ratio: 1 / 1;
+    // }
 
     @include medium {
       flex-basis: 50%;
