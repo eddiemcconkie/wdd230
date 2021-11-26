@@ -556,7 +556,11 @@ address {
     aspect-ratio: 1 / 1;
     // height: auto;
     height: 100%;
-    box-shadow: 0 0 2px $jet;
+    // box-shadow: 0 0 2px $jet;
+
+    // @supports (aspect-ratio: 1 / 1) {
+    // aspect-ratio: 1 / 1;
+    // }
   }
 
   &-data {
@@ -583,6 +587,13 @@ address {
   .img-container {
     position: relative;
     max-height: 250px;
+    // overflow: hidden;
+    box-shadow: 0 0 2px $jet;
+
+    @supports not (aspect-ratio: 1 / 1) {
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
 
     @include medium {
       flex-basis: 50%;

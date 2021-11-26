@@ -534,7 +534,6 @@ address #map {
   width: 100%;
   aspect-ratio: 1/1;
   height: 100%;
-  box-shadow: 0 0 2px #323432;
 }
 .town-data {
   margin-left: 1em;
@@ -559,6 +558,13 @@ address #map {
 .town .img-container {
   position: relative;
   max-height: 250px;
+  box-shadow: 0 0 2px #323432;
+}
+@supports not (aspect-ratio: 1/1) {
+  .town .img-container {
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
 }
 @media (min-width: 35rem) {
   .town .img-container {
