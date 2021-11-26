@@ -115,7 +115,7 @@
         <fieldset>
           <legend>Contact Information</legend>
           <label>
-            Full Name
+            Full Name *
             <input type="text" name="name" pattern="[A-Za-z ]{5,}" required />
           </label>
 
@@ -125,11 +125,11 @@
           </label>
 
           <label>
-            Phone Number
+            Phone Number *
             <input type="tel" name="phone" required />
           </label>
 
-          <label> Zip <input type="number" name="zip" required /> </label>
+          <label> Zip * <input type="text" name="zip" inputmode="numeric" required /> </label>
         </fieldset>
 
         <fieldset>
@@ -206,7 +206,12 @@
           chillearth@chillearth.org
         </p>
         <div class="social-links">
-          <a href="https://facebook.com" target="_blank" aria-label="facebook homepage">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="facebook homepage"
+          >
             <img
               src="icons/facebook-square-brands.svg"
               alt="facebook icon"
@@ -214,7 +219,12 @@
               width="48"
             />
           </a>
-          <a href="https://instagram.com" target="_blank" aria-label="instagram homepage">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="instagram homepage"
+          >
             <img
               src="icons/instagram-square-brands.svg"
               alt="instagram icon"
@@ -222,7 +232,12 @@
               width="48"
             />
           </a>
-          <a href="https://twitter.com" target="_blank" aria-label="twitter homepage">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="twitter homepage"
+          >
             <img
               src="icons/twitter-square-brands.svg"
               alt="twitter icon"
