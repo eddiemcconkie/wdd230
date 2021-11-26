@@ -562,8 +562,11 @@ address #map {
   overflow: hidden;
   box-shadow: 0 0 2px #323432;
   background-image: var(--image-url);
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
 }
 @media (min-width: 35rem) {
   .town-img-container {
