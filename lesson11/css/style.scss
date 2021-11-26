@@ -535,6 +535,12 @@ address {
   gap: 1em;
   width: 100%;
 
+  @include small() {
+    width: 100%;
+    max-width: 20rem;
+    margin: auto;
+  }
+
   @include medium {
     flex-direction: row;
 
@@ -548,19 +554,6 @@ address {
     &:nth-child(n) {
       flex-direction: column;
     }
-  }
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    // aspect-ratio: 1 / 1;
-    // height: auto;
-    height: 100%;
-    // box-shadow: 0 0 2px $jet;
-
-    // @supports (aspect-ratio: 1 / 1) {
-    // aspect-ratio: 1 / 1;
-    // }
   }
 
   &-data {
@@ -584,16 +577,16 @@ address {
     }
   }
 
-  .img-container {
+  &-img-container {
     position: relative;
-    max-height: 250px;
+    width: 100%;
+    min-height: 250px;
     overflow: hidden;
     box-shadow: 0 0 2px $jet;
 
-    // @supports not (aspect-ratio: 1 / 1) {
-    // overflow: hidden;
-    // aspect-ratio: 1 / 1;
-    // }
+    background-image: var(--image-url);
+    background-size: cover;
+    background-position: center;
 
     @include medium {
       flex-basis: 50%;

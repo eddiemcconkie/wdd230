@@ -515,6 +515,13 @@ address #map {
   gap: 1em;
   width: 100%;
 }
+@media (max-width: 34.97rem) {
+  .town {
+    width: 100%;
+    max-width: 20rem;
+    margin: auto;
+  }
+}
 @media (min-width: 35rem) {
   .town {
     flex-direction: row;
@@ -527,12 +534,6 @@ address #map {
   .town:nth-child(n) {
     flex-direction: column;
   }
-}
-.town img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 .town-data {
   margin-left: 1em;
@@ -554,14 +555,18 @@ address #map {
     justify-content: flex-start;
   }
 }
-.town .img-container {
+.town-img-container {
   position: relative;
-  max-height: 250px;
+  width: 100%;
+  min-height: 250px;
   overflow: hidden;
   box-shadow: 0 0 2px #323432;
+  background-image: var(--image-url);
+  background-size: cover;
+  background-position: center;
 }
 @media (min-width: 35rem) {
-  .town .img-container {
+  .town-img-container {
     flex-basis: 50%;
   }
 }
