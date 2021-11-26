@@ -213,10 +213,12 @@ nav ul li:not(.close-overlay).active {
 
 .banner {
   color: #f6f8f2;
-  background: linear-gradient(#2b4b50, #477c85);
+  font-weight: 700;
+  background: linear-gradient(to left, #567163, #6b8e7d);
   text-align: center;
   padding: 1em;
-  margin-top: 1em;
+  margin-top: 0.5em;
+  margin-bottom: -0.5em;
   line-height: 2.5rem;
 }
 @media (max-width: 34.97rem) {
@@ -769,7 +771,7 @@ form select {
   padding: 1em;
   margin: 2rem auto;
   background: linear-gradient(to bottom left, #d0dcd6, #a5bbb0);
-  border: 1rem solid #88a596;
+  border: 0.7rem solid #88a596;
   width: 80%;
   max-width: 25rem;
   box-shadow: 0 3px 5px #4b6357;
@@ -802,4 +804,16 @@ form select {
 }
 .event-list-item {
   margin-bottom: 0.5rem;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.attribution a {
+  font-weight: bold;
+  color: #608070;
 }/*# sourceMappingURL=style.css.map */

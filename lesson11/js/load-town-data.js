@@ -19,27 +19,9 @@ const loadTownData = async () => {
         (t) => t.name === town
       )
       const link = links[name]
-      // return `
-      // <li class="town">
-      //   <div class="img-container">
-      //     <img src="images/placeholder.jpg" data-src="images/${photo}" alt="${name}" width="350" height="350">
-      //     <h3 class="large-only"><a href="${link}">${name}</a></h3>
-      //   </div>
-      //   <div class="town-data">
-      //     <h3 class="medium-and-down"><a href="${link}">${name}</a></h3>
-      //     <p><strong><em>${motto}</em></strong></p>
-      //     <p>Year Founded: ${yearFounded}</p>
-      //     <p>Population: ${currentPopulation}</p>
-      //     <p>Annual Rain Fall: ${averageRainfall}</p>
-      //   </div>
-      // </li>
-      // `
       return `
       <li class="town">
-        <div class="town-img-container" style="--image-url: url(../images/${photo.replace(
-          'jpg',
-          'webp'
-        )})">
+        <div class="town-img-container" style="--image-url: url(../images/${photo})">
           <h3 class="large-only"><a href="${link}">${name}</a></h3>
         </div>
         <div class="town-data">

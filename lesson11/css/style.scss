@@ -205,10 +205,12 @@ nav {
 
 .banner {
   color: $ivory;
-  background: linear-gradient($dark-slate-gray, $slate-gray);
+  font-weight: 700;
+  background: linear-gradient(to left, darken($timberwolf, 45), darken($timberwolf, 35));
   text-align: center;
   padding: 1em;
-  margin-top: 1em;
+  margin-top: 0.5em;
+  margin-bottom: -0.5em;
   line-height: 2.5rem;
 
   @include small {
@@ -356,9 +358,6 @@ main a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  // background-color: $alabaster;
-  // background: linear-gradient(to bottom right, lighten($alabaster, 5), $alabaster);
-  // background: linear-gradient(to bottom right, $alabaster, $timberwolf);
   background: linear-gradient(to bottom right, lighten($alabaster, 5), lighten($timberwolf, 5));
   padding: 1em;
   max-width: 20rem;
@@ -808,7 +807,7 @@ form {
   padding: 1em;
   margin: 2rem auto;
   background: linear-gradient(to bottom left, $timberwolf, darken($timberwolf, 15));
-  border: 1rem solid darken($timberwolf, 25);
+  border: 0.7rem solid darken($timberwolf, 25);
   width: 80%;
   max-width: 25rem;
   box-shadow: 0 3px 5px darken($timberwolf, 50);
@@ -842,5 +841,18 @@ form {
     &-item {
       margin-bottom: 0.5rem;
     }
+  }
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-style: italic;
+
+  a {
+    font-weight: bold;
+    color: darken($timberwolf, 40);
   }
 }
