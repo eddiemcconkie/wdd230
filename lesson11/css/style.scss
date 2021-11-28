@@ -863,7 +863,12 @@ form {
 
   a {
     font-weight: bold;
-    color: darken($timberwolf, 40);
+    color: darken($timberwolf, 50);
+
+    &:hover,
+    &:focus {
+      color: darken($timberwolf, 65);
+    }
   }
 }
 

@@ -823,7 +823,10 @@ form select {
 }
 .attribution a {
   font-weight: bold;
-  color: #608070;
+  color: #4b6357;
+}
+.attribution a:hover, .attribution a:focus {
+  color: #2a3730;
 }
 
 .homepage-subtitle {
