@@ -424,6 +424,14 @@ article img {
     box-shadow: 0 0 2px #323432;
   }
 }
+article .article-info {
+  font-size: 0.8rem;
+}
+article .lyrics {
+  line-height: 1.5;
+  padding-left: 1rem;
+  border-left: 10px solid #d0dcd6;
+}
 
 address {
   background: linear-gradient(to top right, #599ca6, #7aafb8);
@@ -816,4 +824,48 @@ form select {
 .attribution a {
   font-weight: bold;
   color: #608070;
+}
+
+.homepage-subtitle {
+  text-align: center;
+  width: 80%;
+  max-width: 32rem;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+}
+@media (max-width: 34.97rem) {
+  .homepage-subtitle {
+    width: 100%;
+  }
+}
+
+.search-bar {
+  text-align: center;
+  align-items: center;
+}
+.search-bar p {
+  font-size: 1.2rem;
+}
+.search-bar input {
+  margin: auto;
+}
+.search-bar button {
+  margin: auto;
+  width: 10rem;
+  font-weight: 700;
+  box-shadow: 0 1px 3px #ad810b;
+}
+
+.article-image {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 80%;
+     object-position: 50% 80%;
+}
+@media (max-width: 34.97rem) {
+  .article-image {
+    margin: 1rem 0;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

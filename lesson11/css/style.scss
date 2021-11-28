@@ -435,6 +435,16 @@ article {
       box-shadow: 0 0 2px $jet;
     }
   }
+
+  .article-info {
+    font-size: 0.8rem;
+  }
+
+  .lyrics {
+    line-height: 1.5;
+    padding-left: 1rem;
+    border-left: 10px solid $timberwolf;
+  }
 }
 
 address {
@@ -854,5 +864,49 @@ form {
   a {
     font-weight: bold;
     color: darken($timberwolf, 40);
+  }
+}
+
+.homepage-subtitle {
+  text-align: center;
+  width: 80%;
+  max-width: 32rem;
+  margin: 2rem auto;
+
+  font-size: 1.4rem;
+
+  @include small {
+    width: 100%;
+  }
+}
+
+.search-bar {
+  text-align: center;
+  align-items: center;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  input {
+    margin: auto;
+  }
+
+  button {
+    margin: auto;
+    width: 10rem;
+    font-weight: 700;
+    box-shadow: 0 1px 3px darken($maize-crayola, 30);
+  }
+}
+
+.article-image {
+  display: block;
+  object-fit: cover;
+  object-position: 50% 80%;
+
+  @include small {
+    margin: 1rem 0;
+    width: 100%;
   }
 }
