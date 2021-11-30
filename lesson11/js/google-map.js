@@ -4,10 +4,6 @@ const initMap = (lat, lng) => {
     zoom: 8,
   }
   const map = new google.maps.Map(document.getElementById('map'), options)
-  const marker = new google.maps.Marker({
-    position: { lat, lng },
-    map: map,
-  })
 }
 
 function initMapPreston() {
