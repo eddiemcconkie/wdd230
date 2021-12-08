@@ -12,11 +12,11 @@
   @include breakpoints.medium {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   @include breakpoints.large {
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 

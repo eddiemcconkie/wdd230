@@ -52,8 +52,10 @@
   height: 250px;
 
   @include breakpoints.medium {
-    height: 300px;
-    margin-bottom: -6rem;
+    // height: 500px;
+    // margin-bottom: -6rem;
+    height: 80vh;
+    margin-bottom: -16rem;
   }
 
   &__image {
@@ -76,8 +78,10 @@ hr {
   background-color: white;
   text-align: center;
   padding: 2rem;
+  @include utils.box-shadow('medium');
+
   @include breakpoints.medium {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
   @include breakpoints.large {
     padding: 3rem 2rem;
@@ -92,9 +96,16 @@ hr {
 
     &--small {
       @extend .section__heading;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
+}
+
+.main-content {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 .join-button {
@@ -111,8 +122,6 @@ hr {
 
 .advertised-businesses {
   display: grid;
-  // grid-template-columns: minmax(0, 1fr);
-  // grid-template-columns: 100%;
   grid-template-columns: 1fr;
   gap: 1rem;
   width: 100%;

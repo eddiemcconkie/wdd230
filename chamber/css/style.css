@@ -25,12 +25,12 @@ html {
   .home-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 @media screen and (min-width: 64rem) {
   .home-content {
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
@@ -39,11 +39,12 @@ html {
 }
 
 .business {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(auto, 30vw) minmax(10rem, max-content);
   gap: 0.5rem;
   position: relative;
   background-color: #f9f3f1;
-  min-width: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .business__image {
   width: 100%;
@@ -51,8 +52,6 @@ html {
   object-fit: cover;
 }
 .business__image-container {
-  flex: 0 0 auto;
-  width: 30vw;
   overflow: hidden;
 }
 .business__info {
@@ -69,26 +68,54 @@ html {
   font-size: clamp(1rem, 2.5vw + 0.5rem, 1.4rem);
 }
 .business__contact-list {
+  margin-top: 0.5rem;
   padding: 0;
   list-style-type: none;
+  font-style: normal;
 }
 @media screen and (min-width: 48rem) {
   .business {
     display: block;
+    position: relative;
+    overflow: hidden;
   }
   .business__image-container {
     width: 100%;
   }
   .business__info {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-size: 1rem;
-    position: relative;
+    background-color: #f9f3f1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+    top: calc(100% - 5.2rem);
+    transition: top 200ms ease-in-out;
+  }
+  .business:hover .business__info, .business:focus .business__info {
+    top: 0;
   }
   .business__name {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
   }
   .business__motto {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+  .business__contact {
+    margin-top: auto;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .business__info {
+    top: calc(100% - 6.5rem);
+  }
+  .business__name {
+    font-size: 2.2rem;
+    margin-bottom: 1.6rem;
   }
 }
 
@@ -139,8 +166,8 @@ html {
 }
 @media screen and (min-width: 48rem) {
   .hero {
-    height: 300px;
-    margin-bottom: -6rem;
+    height: 80vh;
+    margin-bottom: -16rem;
   }
 }
 .hero__image {
@@ -162,10 +189,11 @@ hr {
   background-color: white;
   text-align: center;
   padding: 2rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 @media screen and (min-width: 48rem) {
   .section {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -181,7 +209,14 @@ hr {
   margin-bottom: 0.5em;
 }
 .section__heading--small {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.main-content {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 .join-button {
