@@ -1,0 +1,212 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Red Hat Display", sans-serif;
+  background-color: #f9f3f1;
+}
+
+@media screen and (min-width: 48rem) {
+  .container {
+    width: 95%;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .home-content {
+    gap: 2rem;
+  }
+}
+
+.two-column {
+  grid-column: 1/-1;
+}
+
+.business {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+  background-color: #f9f3f1;
+  min-width: 0;
+}
+.business__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.business__image-container {
+  flex: 0 0 auto;
+  width: 30vw;
+  overflow: hidden;
+}
+.business__info {
+  text-align: start;
+  padding: 0 1rem;
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+}
+.business__name {
+  color: #45595e;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+.business__motto {
+  font-size: clamp(1rem, 2.5vw + 0.5rem, 1.4rem);
+}
+.business__contact-list {
+  padding: 0;
+  list-style-type: none;
+}
+@media screen and (min-width: 48rem) {
+  .business {
+    display: block;
+  }
+  .business__image-container {
+    width: 100%;
+  }
+  .business__info {
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+  }
+  .business__name {
+    font-size: 1.6rem;
+  }
+  .business__motto {
+    font-size: 1.1rem;
+  }
+}
+
+.title {
+  color: white;
+  position: relative;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.nav {
+  display: none;
+  background-color: #d6705c;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 48rem) {
+  .nav {
+    display: flex;
+  }
+}
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: clamp(1rem, 4vw - 0.5rem, 3rem);
+  margin-left: auto;
+}
+.nav__link {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero {
+  object-fit: cover;
+  overflow: hidden;
+  height: 250px;
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    height: 300px;
+    margin-bottom: -6rem;
+  }
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+hr {
+  border: 1.5px solid #d6705c;
+  background-color: #d6705c;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1px;
+}
+
+.section {
+  background-color: white;
+  text-align: center;
+  padding: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .section {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .section {
+    padding: 3rem 2rem;
+  }
+}
+.section__heading, .section__heading--small {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #45595e;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.section__heading--small {
+  font-size: 1.5rem;
+}
+
+.join-button {
+  background-color: #35606b;
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  border-radius: 0.2em;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.advertised-businesses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .advertised-businesses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

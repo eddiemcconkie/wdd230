@@ -1,0 +1,25 @@
+@use 'breakpoints';
+
+.container {
+  @include breakpoints.medium {
+    width: 95%;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}
+
+.home-content {
+  @include breakpoints.medium {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @include breakpoints.large {
+    gap: 2rem;
+  }
+}
+
+.two-column {
+  grid-column: 1 / -1;
+}

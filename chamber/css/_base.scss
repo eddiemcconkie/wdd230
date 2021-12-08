@@ -1,0 +1,17 @@
+@use 'theme';
+@use 'utils';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Red Hat Display', sans-serif;
+  background-color: theme.$light-gray;
+}
