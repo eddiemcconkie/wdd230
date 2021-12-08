@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   background-color: #f9f3f1;
 }
 
@@ -40,6 +40,7 @@ html {
 
 .business {
   display: grid;
+  grid-template-columns: minmax(auto, 30vw) minmax(10rem, -webkit-max-content);
   grid-template-columns: minmax(auto, 30vw) minmax(10rem, max-content);
   gap: 0.5rem;
   position: relative;
@@ -49,6 +50,7 @@ html {
 .business__image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .business__image-container {
@@ -95,7 +97,8 @@ html {
     top: calc(100% - 5.2rem);
     transition: top 200ms ease-in-out;
   }
-  .business:hover .business__info, .business:focus .business__info {
+  .business:hover .business__info,
+  .business:focus .business__info {
     top: 0;
   }
   .business__name {
@@ -160,6 +163,7 @@ html {
 }
 
 .hero {
+  -o-object-fit: cover;
   object-fit: cover;
   overflow: hidden;
   height: 250px;
@@ -173,7 +177,9 @@ html {
 .hero__image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
 }
 
@@ -201,7 +207,8 @@ hr {
     padding: 3rem 2rem;
   }
 }
-.section__heading, .section__heading--small {
+.section__heading,
+.section__heading--small {
   font-size: 2rem;
   font-weight: 700;
   color: #45595e;
@@ -243,5 +250,3 @@ hr {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
