@@ -36,7 +36,9 @@
     <main>
       <div class="hero">
         <img src="images/hero.jpg" alt="the great salt lake" width="100%" class="hero__img" />
-        <div class="hero__logo-container"><img src="" alt="" /></div>
+        <div class="hero__logo-container">
+          <img src="icons/logo.svg" alt="chamber of commerce logo" class="hero__logo" />
+        </div>
       </div>
 
       <div class="container home-content">
@@ -67,8 +69,8 @@
               </div>
               <section class="business__info">
                 <h3 class="business__name">Zions Bank</h3>
-                <em class="business__motto">We Haven't Forgotten Who Keeps Us in Business </em>
-                <p class="business__mission">Part of SLC Chamber since 2021</p>
+                <em class="business__slogan">We Haven't Forgotten Who Keeps Us in Business </em>
+                <p class="business__membership">Member of SLC Chamber since 2021</p>
                 <address class="business__contact">
                   <span>Contact us at</span>
                   <ul class="business__contact-list">
@@ -87,8 +89,8 @@
               </div>
               <section class="business__info">
                 <h3 class="business__name">Ken Garff</h3>
-                <em class="business__motto">We Hear You</em>
-                <p class="business__mission">Part of SLC Chamber since 2021</p>
+                <em class="business__slogan">We Hear You</em>
+                <p class="business__membership">Member of SLC Chamber since 2021</p>
                 <address class="business__contact">
                   <span>Contact us at</span>
                   <ul class="business__contact-list">
@@ -107,10 +109,10 @@
               </div>
               <section class="business__info">
                 <h3 class="business__name">Vivint</h3>
-                <em class="business__motto"
+                <em class="business__slogan"
                   >The smartest home security system in the neighborhood</em
                 >
-                <p class="business__mission">Part of SLC Chamber since 2021</p>
+                <p class="business__membership">Member of SLC Chamber since 2021</p>
                 <address class="business__contact">
                   <span>Contact us at</span>
                   <ul class="business__contact-list">
@@ -143,55 +145,58 @@
         <section class="section one-column">
           <h2 class="section__heading--small">Weather</h2>
           <hr />
-          <div class="weather--grid">
-            <div class="weather__today--primary">
+          <div class="weather__grid">
+            <div class="weather__today weather__layout">
               <div class="weather__header">Today</div>
-              <div class="weather__body">
-                <span>Sunny</span>
-                <span>Humidity: 50%</span>
-              </div>
+              <span>Sunny</span>
+              <span>Humidity: 50%</span>
             </div>
-            <div class="weather__today--secondary">
-              <img src="" alt="weather icon" />
+            <div class="weather__side">
+              <img
+                src="icons/weather/clear-sky-day.svg"
+                alt="weather icon"
+                class="weather__icon--large"
+              />
               <span>82&deg;F</span>
             </div>
           </div>
           <hr />
-          <div class="weather--grid">
-            <div class="weather__forecast">
+          <div class="weather__grid">
+            <div class="weather__forecast weather__layout">
               <div class="weather__header">Tue</div>
-              <div class="weather__body">
-                <span>Sunny</span>
-                <img src="" alt="weather icon" />
-                <span>Humidity: 50%</span>
-              </div>
+              <img
+                src="icons/weather/few-clouds-night.svg"
+                alt="weather icon"
+                class="weather__icon"
+              />
+              <span>79&deg;F</span>
             </div>
-            <div class="weather__forecast">
+            <div class="weather__forecast weather__layout">
               <div class="weather__header">Wed</div>
-              <div class="weather__body">
-                <span>Sunny</span>
-                <img src="" alt="weather icon" />
-                <span>Humidity: 50%</span>
-              </div>
+              <img src="icons/weather/thunderstorm.svg" alt="weather icon" class="weather__icon" />
+              <span>87&deg;F</span>
             </div>
-            <div class="weather__forecast">
+            <div class="weather__forecast weather__layout">
               <div class="weather__header">Thu</div>
-              <div class="weather__body">
-                <span>Sunny</span>
-                <img src="" alt="weather icon" />
-                <span>Humidity: 50%</span>
-              </div>
+              <img src="icons/weather/shower-rain.svg" alt="weather icon" class="weather__icon" />
+              <span>84&deg;F</span>
             </div>
           </div>
+          <em class="attribution">
+            Weather info from
+            <a href="https://openweathermap.org" target="_blank" ref="noopener noreferrer">
+              openweathermap.org
+            </a>
+          </em>
         </section>
       </div>
     </main>
     <footer class="footer">
       <div class="footer__logo-container">
-        <img src="" alt="footer logo" class="footer__logo" />
+        <img src="icons/logo.svg" alt="footer logo" class="footer__logo" />
       </div>
       <address class="main-contact">
-        <span class="main-contact__title"></span>
+        <span class="main-contact__title">Contact us</span>
         <ul class="main-contact__info">
           <li>500 W 1400 N</li>
           <li>Salt Lake City, UT 84111</li>
@@ -200,23 +205,39 @@
         </ul>
       </address>
       <ul class="footer__social">
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img src="icons/social/facebook.svg" alt="facebook icon" class="footer__social-icon" />
+          </a>
         </li>
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img
+              src="icons/social/instagram.svg"
+              alt="instagram icon"
+              class="footer__social-icon"
+            />
+          </a>
         </li>
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img src="icons/social/twitter.svg" alt="twitter icon" class="footer__social-icon" />
+          </a>
         </li>
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img src="icons/social/email.svg" alt="email icon" class="footer__social-icon" />
+          </a>
         </li>
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img src="icons/social/map.svg" alt="map icon" class="footer__social-icon" />
+          </a>
         </li>
-        <li>
-          <a href="#"><img src="" alt="social media icon" class="footer__social--icon" /></a>
+        <li class="footer__social-link">
+          <a href="#">
+            <img src="icons/social/share.svg" alt="share icon" class="footer__social-icon" />
+          </a>
         </li>
 
         <!-- <a href="" class="footer__social-media--icon"></a> -->

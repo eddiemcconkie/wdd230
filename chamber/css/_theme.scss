@@ -1,8 +1,10 @@
-$rust: #c16856;
-$red: #d6705c;
-$dark-red: #a04c3b;
-$blue-gray: #45595e;
-$dark-blue: #35606b;
-$darker-blue: #23525e;
-$light-gray: #f9f3f1;
-$light-blue-gray: #dfe7e8;
+$rust: hsl(10, 46%, 55%);
+$red: hsl(10, 60%, 60%);
+$dark-red: hsl(10, 46%, 43%);
+$blue-gray: hsl(192, 15%, 32%);
+$dark-blue: hsl(192, 34%, 31%);
+$darker-blue: hsl(192, 46%, 25%);
+$light-gray: hsl(15, 40%, 96%);
+// $light-blue-gray: #dfe7e8;
+$light-blue-gray: hsl(180, 15%, 94%);
+$attribution: hsl(180, 11%, 34%);

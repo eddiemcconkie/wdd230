@@ -16,3 +16,15 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
+
+@mixin drop-shadow($weight) {
+  @if $weight == 'light' {
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+  } @else if $weight == 'medium' {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+  }
+}
+@mixin h {
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+$transition-timing: cubic-bezier(0.23, 1, 0.32, 1);

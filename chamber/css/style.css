@@ -9,8 +9,19 @@ html {
 }
 
 :root {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   background-color: #f9f3f1;
+}
+
+.attribution {
+  font-size: 0.8rem;
+  color: #4d6060;
+  margin-top: 1rem;
+  display: block;
+}
+.attribution a {
+  color: #4d6060;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 48rem) {
@@ -26,11 +37,13 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 64rem) {
   .home-content {
     gap: 3rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -38,9 +51,21 @@ html {
   grid-column: 1/-1;
 }
 
+.advertised-businesses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .advertised-businesses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .business {
   display: grid;
-  grid-template-columns: minmax(auto, 30vw) minmax(10rem, -webkit-max-content);
   grid-template-columns: minmax(auto, 30vw) minmax(10rem, max-content);
   gap: 0.5rem;
   position: relative;
@@ -50,24 +75,31 @@ html {
 .business__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .business__image-container {
   overflow: hidden;
 }
 .business__info {
+  display: flex;
+  flex-direction: column;
   text-align: start;
   padding: 0 1rem;
-  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  font-size: clamp(0.8rem, 3vw, 1.1rem);
 }
 .business__name {
   color: #45595e;
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3vw, 1.8rem);
   margin-bottom: 0.5rem;
 }
-.business__motto {
-  font-size: clamp(1rem, 2.5vw + 0.5rem, 1.4rem);
+.business__slogan {
+  font-size: clamp(1rem, 2.5vw + 0.5rem, 1.2rem);
+}
+.business__membership {
+  font-size: 0.8rem;
+}
+.business__contact {
+  margin: auto 0;
 }
 .business__contact-list {
   margin-top: 0.5rem;
@@ -85,8 +117,6 @@ html {
     width: 100%;
   }
   .business__info {
-    display: flex;
-    flex-direction: column;
     text-align: center;
     font-size: 1rem;
     background-color: #f9f3f1;
@@ -94,31 +124,82 @@ html {
     width: 100%;
     height: 100%;
     padding-bottom: 1rem;
-    top: calc(100% - 5.2rem);
-    transition: top 200ms ease-in-out;
+    top: calc(100% - 4.8rem);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  .business:hover .business__info,
-  .business:focus .business__info {
+  .business:hover .business__info, .business:focus .business__info {
     top: 0;
   }
   .business__name {
-    font-size: 1.8rem;
     margin-bottom: 1.2rem;
   }
-  .business__motto {
+  .business__slogan {
     font-size: 1.2rem;
-  }
-  .business__contact {
-    margin-top: auto;
   }
 }
 @media screen and (min-width: 64rem) {
   .business__info {
-    top: calc(100% - 6.5rem);
+    top: calc(100% - 5.2rem);
   }
-  .business__name {
-    font-size: 2.2rem;
-    margin-bottom: 1.6rem;
+}
+
+.weather__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+.weather__today {
+  grid-column: 1/3;
+  font-size: 1.2rem;
+}
+.weather__side {
+  font-size: 1.8rem;
+  font-weight: 600;
+  justify-content: space-evenly;
+}
+.weather__layout, .weather__side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.weather__layout {
+  background-color: #edf2f2;
+  padding-bottom: 1rem;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.weather__header, .weather__forecast {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.weather__header {
+  color: white;
+  background-color: #22515d;
+  padding: 0.2rem;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.weather__icon, .weather__icon--large {
+  margin: 0 auto;
+  width: 50%;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+.weather__icon--large {
+  width: 70%;
+  min-width: 4rem;
+}
+@media screen and (min-width: 48rem) {
+  .weather__grid {
+    margin: 0 1rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .weather__grid {
+    gap: 2rem;
   }
 }
 
@@ -136,8 +217,8 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(1rem, 3vw, 3rem);
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -150,37 +231,58 @@ html {
 .nav__list {
   display: flex;
   list-style: none;
-  gap: clamp(1rem, 4vw - 0.5rem, 3rem);
-  margin-left: auto;
+  margin: 0 0 0 auto;
+}
+.nav__item {
+  background-color: transparent;
+  transition: background-color 100ms ease-in-out;
+}
+.nav__item:hover, .nav__item:focus {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .nav__link {
   text-decoration: none;
   font-weight: 600;
   color: white;
   display: block;
+  padding: 0.5rem clamp(1rem, 2vw - 0.5rem, 2rem);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero {
-  -o-object-fit: cover;
   object-fit: cover;
   overflow: hidden;
   height: 250px;
 }
-@media screen and (min-width: 48rem) {
-  .hero {
-    height: 80vh;
-    margin-bottom: -16rem;
-  }
-}
 .hero__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
   object-position: center;
+}
+.hero__logo {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
+.hero__logo-container {
+  position: absolute;
+  top: clamp(2rem, 4vw, 3rem);
+  left: clamp(2rem, 4vw, 3rem);
+  width: clamp(6rem, 12vw, 9rem);
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    height: 80vmin;
+    max-height: 35rem;
+    margin-bottom: -12rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .hero {
+    margin-bottom: -14rem;
+  }
 }
 
 hr {
@@ -189,6 +291,7 @@ hr {
   width: 100%;
   max-width: 500px;
   border-radius: 1px;
+  margin: 1rem auto;
 }
 
 .section {
@@ -207,8 +310,7 @@ hr {
     padding: 3rem 2rem;
   }
 }
-.section__heading,
-.section__heading--small {
+.section__heading, .section__heading--small {
   font-size: 2rem;
   font-weight: 700;
   color: #45595e;
@@ -227,7 +329,8 @@ hr {
 }
 
 .join-button {
-  background-color: #35606b;
+  cursor: pointer;
+  background-color: #345f6a;
   color: white;
   font-weight: 700;
   font-size: 2rem;
@@ -236,17 +339,96 @@ hr {
   border-radius: 0.2em;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.join-button:hover, .join-button:focus {
+  filter: brightness(1.2);
+  transform: translateY(-1px) scale(1.05);
 }
 
-.advertised-businesses {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+.upcoming-events {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 2;
+  padding: 0;
+}
+
+.footer {
+  color: white;
+  background-color: #c16957;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+.footer__logo {
   width: 100%;
-  margin-top: 2rem;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+.footer__logo-container {
+  display: block;
+  margin-left: clamp(0rem, 5vw, 3rem);
+  margin-right: clamp(0rem, 5vw, 3rem);
+  width: clamp(5rem, 18vw, 7rem);
+  align-self: center;
+}
+.main-contact {
+  padding: 1rem;
+  font-style: normal;
+  align-self: flex-end;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+.main-contact__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.main-contact__info {
+  list-style: none;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.footer__social {
+  flex-basis: 30rem;
+  padding: 0 2rem 2rem 1rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+.footer__social-link {
+  flex-shrink: 1;
+  flex-basis: 2.5rem;
+}
+.footer__social-icon {
+  width: 100%;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.footer__social-icon:hover, .footer__social-icon:focus {
+  transform: translateY(-4px) scale(1.1);
 }
 @media screen and (min-width: 48rem) {
-  .advertised-businesses {
-    grid-template-columns: repeat(3, 1fr);
+  .footer__logo-container {
+    margin: 2rem;
+    width: 7rem;
+  }
+  .main-contact__title {
+    font-size: 1.5rem;
+  }
+  .main-contact__info {
+    font-size: 1.2rem;
+  }
+
+  .footer__social {
+    background-color: transparent;
+    align-items: flex-end;
+    padding-bottom: 1rem;
   }
 }
+@media screen and (min-width: 64rem) {
+  .footer__logo-container {
+    width: 9rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

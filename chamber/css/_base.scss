@@ -1,4 +1,4 @@
-@use 'theme';
+@use 'theme' as *;
 @use 'utils';
 
 *,
@@ -13,5 +13,17 @@ html {
 
 :root {
   font-family: 'Red Hat Display', sans-serif;
-  background-color: theme.$light-gray;
+  background-color: $light-gray;
+}
+
+.attribution {
+  font-size: 0.8rem;
+  color: $attribution;
+  margin-top: 1rem;
+  display: block;
+
+  a {
+    color: $attribution;
+    font-weight: 600;
+  }
 }

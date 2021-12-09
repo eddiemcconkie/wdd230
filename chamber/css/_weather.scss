@@ -1,0 +1,77 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.weather {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 25rem;
+    margin: 0 auto;
+  }
+
+  &__today {
+    grid-column: 1 / 3;
+    font-size: 1.2rem;
+  }
+  &__side {
+    font-size: 1.8rem;
+    font-weight: 600;
+    justify-content: space-evenly;
+  }
+
+  &__layout,
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  &__layout {
+    background-color: $light-blue-gray;
+    padding-bottom: 1rem;
+    border-radius: 3px;
+    overflow: hidden;
+    @include utils.box-shadow('medium');
+  }
+
+  &__header,
+  &__forecast {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  &__header {
+    color: white;
+    background-color: $darker-blue;
+    padding: 0.2rem;
+    @include utils.text-shadow('medium');
+  }
+
+  &__icon {
+    margin: 0 auto;
+    width: 50%;
+    @include utils.drop-shadow('light');
+
+    &--large {
+      @extend .weather__icon;
+      width: 70%;
+      min-width: 4rem;
+    }
+  }
+
+  @include breakpoints.medium {
+    &__grid {
+      margin: 0 1rem;
+    }
+  }
+
+  @include breakpoints.large {
+    &__grid {
+      gap: 2rem;
+    }
+  }
+}
