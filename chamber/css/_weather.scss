@@ -17,7 +17,8 @@
   }
   &__side {
     font-size: 1.8rem;
-    font-weight: 600;
+    color: $blue-gray;
+    @include font('display', 700);
     justify-content: space-evenly;
   }
 
@@ -41,7 +42,7 @@
   &__header,
   &__forecast {
     font-size: 1.4rem;
-    font-weight: 600;
+    @include font('display', 600);
   }
 
   &__header {

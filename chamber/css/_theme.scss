@@ -7,4 +7,12 @@ $darker-blue: hsl(192, 46%, 25%);
 $light-gray: hsl(15, 40%, 96%);
 // $light-blue-gray: #dfe7e8;
 $light-blue-gray: hsl(180, 15%, 94%);
-$attribution: hsl(180, 11%, 34%);
+
+@mixin font($type, $weight) {
+  @if $type == 'display' {
+    font-family: 'Red Hat Display', sans-serif;
+  } @else if $type == 'body' {
+    font-family: 'Red Hat Text', sans-serif;
+  }
+  font-weight: $weight;
+}

@@ -12,18 +12,23 @@ html {
 }
 
 :root {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Red Hat Text', sans-serif;
   background-color: $light-gray;
+}
+
+a {
+  color: $red;
+  @include font('body', 600);
+}
+
+::selection {
+  background-color: rgba($dark-red, 0.9);
+  color: white;
 }
 
 .attribution {
   font-size: 0.8rem;
-  color: $attribution;
+  color: $blue-gray;
   margin-top: 1rem;
   display: block;
-
-  a {
-    color: $attribution;
-    font-weight: 600;
-  }
 }

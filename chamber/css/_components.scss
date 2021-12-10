@@ -11,6 +11,7 @@
   margin: 0;
   @include utils.text-shadow('bold');
   font-size: clamp(1.5rem, 3vw, 2rem);
+  @include font('display', 700);
 }
 
 .nav {
@@ -46,7 +47,7 @@
 
   &__link {
     text-decoration: none;
-    font-weight: 600;
+    @include font('display', 600);
     color: white;
     display: block;
     padding: 0.5rem clamp(1rem, 2vw - 0.5rem, 2rem);
@@ -115,7 +116,7 @@ hr {
 
   &__heading {
     font-size: 2rem;
-    font-weight: 700;
+    @include font('display', 700);
     color: $blue-gray;
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -138,11 +139,12 @@ hr {
   cursor: pointer;
   background-color: $dark-blue;
   color: white;
-  font-weight: 700;
+  @include font('display', 700);
   font-size: 2rem;
   display: inline-block;
   padding: 0.2em 0.8em;
   border-radius: 0.2em;
+  text-decoration: none;
   @include utils.text-shadow('medium');
   @include utils.box-shadow('bold');
 
@@ -191,7 +193,7 @@ hr {
 
     &__title {
       font-size: 1.2rem;
-      font-weight: 600;
+      @include font('display', 700);
     }
 
     &__info {

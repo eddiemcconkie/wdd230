@@ -9,19 +9,26 @@ html {
 }
 
 :root {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   background-color: #f9f3f1;
+}
+
+a {
+  color: #d6705c;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 600;
+}
+
+::selection {
+  background-color: rgba(160, 76, 59, 0.9);
+  color: white;
 }
 
 .attribution {
   font-size: 0.8rem;
-  color: #4d6060;
+  color: #45595e;
   margin-top: 1rem;
   display: block;
-}
-.attribution a {
-  color: #4d6060;
-  font-weight: 600;
 }
 
 @media screen and (min-width: 48rem) {
@@ -88,15 +95,21 @@ html {
   font-size: clamp(0.8rem, 3vw, 1.1rem);
 }
 .business__name {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
   color: #45595e;
   font-size: clamp(1.6rem, 3vw, 1.8rem);
   margin-bottom: 0.5rem;
 }
 .business__slogan {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
   font-size: clamp(1rem, 2.5vw + 0.5rem, 1.2rem);
 }
 .business__membership {
-  font-size: 0.8rem;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 .business__contact {
   margin: auto 0;
@@ -136,10 +149,17 @@ html {
   .business__slogan {
     font-size: 1.2rem;
   }
+  .business__contact-list {
+    line-height: 1.2;
+  }
 }
 @media screen and (min-width: 64rem) {
   .business__info {
     top: calc(100% - 5.2rem);
+  }
+  .business__contact-list {
+    line-height: 1.5;
+    margin-top: 1rem;
   }
 }
 
@@ -156,7 +176,9 @@ html {
 }
 .weather__side {
   font-size: 1.8rem;
-  font-weight: 600;
+  color: #45595e;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
   justify-content: space-evenly;
 }
 .weather__layout, .weather__side {
@@ -175,6 +197,7 @@ html {
 }
 .weather__header, .weather__forecast {
   font-size: 1.4rem;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
 }
 .weather__header {
@@ -209,6 +232,8 @@ html {
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
 }
 
 .nav {
@@ -242,6 +267,7 @@ html {
 }
 .nav__link {
   text-decoration: none;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
   color: white;
   display: block;
@@ -312,6 +338,7 @@ hr {
 }
 .section__heading, .section__heading--small {
   font-size: 2rem;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 700;
   color: #45595e;
   margin-top: 0;
@@ -332,11 +359,13 @@ hr {
   cursor: pointer;
   background-color: #345f6a;
   color: white;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 700;
   font-size: 2rem;
   display: inline-block;
   padding: 0.2em 0.8em;
   border-radius: 0.2em;
+  text-decoration: none;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -380,7 +409,8 @@ hr {
 }
 .main-contact__title {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
 }
 .main-contact__info {
   list-style: none;
