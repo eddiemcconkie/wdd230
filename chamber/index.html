@@ -21,10 +21,16 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="icons/logo.svg" type="image/x-icon" />
+
+    <script src="js/menu.js" defer></script>
   </head>
   <body>
-    <nav class="nav">
-      <h1 class="title">SLC Chamber</h1>
+    <nav class="nav transparent" id="navigation">
+      <h1 class="nav__title">SLC Chamber</h1>
+      <button class="nav__button" id="menuButton" aria-label="menu button">
+        <img class="nav__button-icon--open" src="icons/ui/menu.svg" alt="open menu" />
+        <img class="nav__button-icon--close" src="icons/ui/close.svg" alt="close menu" />
+      </button>
       <ul class="nav__list">
         <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
         <li class="nav__item"><a class="nav__link" href="city.html">City</a></li>

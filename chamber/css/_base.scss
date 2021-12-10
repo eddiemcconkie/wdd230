@@ -11,6 +11,10 @@ html {
   box-sizing: border-box;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 :root {
   font-family: 'Red Hat Text', sans-serif;
   background-color: $light-gray;
