@@ -2,6 +2,9 @@ const navigation = document.getElementById('navigation')
 const menuButton = document.getElementById('menuButton')
 const body = document.body
 
+// for mobile
+const scale = window.devicePixelRatio
+
 const toggleNav = () => {
   if (window.pageYOffset < 200) {
     navigation.classList.add('transparent')
@@ -13,7 +16,7 @@ const toggleNav = () => {
 const toggleMobile = () => {
   navigation.classList.remove('open')
   body.classList.remove('no-scroll')
-  if (window.innerWidth < 48 * 16 /* 48rem */) {
+  if (window.innerWidth / scale < 48 * 16 /* 48rem */) {
     navigation.classList.add('mobile')
   } else {
     navigation.classList.remove('mobile')

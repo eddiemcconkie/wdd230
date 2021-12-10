@@ -178,6 +178,10 @@ hr {
     }
   }
 
+  a {
+    color: white;
+  }
+
   @include breakpoints.medium {
     &__logo-container {
       margin: 2rem;

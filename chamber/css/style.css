@@ -528,6 +528,9 @@ hr {
 .footer__social-icon:hover, .footer__social-icon:focus {
   transform: translateY(-4px) scale(1.1);
 }
+.footer a {
+  color: white;
+}
 @media screen and (min-width: 48rem) {
   .footer__logo-container {
     margin: 2rem;
