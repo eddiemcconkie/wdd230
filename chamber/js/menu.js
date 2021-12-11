@@ -16,7 +16,7 @@ const toggleNav = () => {
 const toggleMobile = () => {
   navigation.classList.remove('open')
   body.classList.remove('no-scroll')
-  if (window.innerWidth / screenScale < 48 * 16 /* 48rem */) {
+  if (window.innerWidth * screenScale < 48 * 16 /* 48rem */) {
     navigation.classList.add('mobile')
   } else {
     navigation.classList.remove('mobile')
