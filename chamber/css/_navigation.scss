@@ -3,23 +3,27 @@
 @use 'theme' as *;
 
 .nav {
-  // display: none;
-  // @include breakpoints.medium {
   display: flex;
-  // }
-  background-color: $red;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 clamp(1rem, 3vw, 3rem);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: start;
+  padding: 1rem 0;
+  background-color: transparent;
+  box-shadow: none;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
-  @include utils.box-shadow('bold');
-
+  min-height: 100%;
   transition: all 400ms utils.$transition-timing;
 
+  &.open {
+    background-color: $red;
+  }
+
   &__title {
+    display: none;
+
     color: white;
     margin: 0;
     @include utils.text-shadow('bold');
@@ -31,80 +35,13 @@
 
   &__list {
     display: flex;
-    list-style: none;
-    margin: 0 0 0 auto;
-    padding: 0;
-  }
-
-  &__item {
-    background-color: transparent;
-    transition: background-color 300ms utils.$transition-timing;
-
-    &:hover,
-    &:focus {
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-    @include font('display', 600);
-    color: white;
-    display: block;
-    padding: 0.5rem clamp(1rem, 2vw - 0.5rem, 2rem);
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    @include utils.text-shadow('bold');
-
-    transition: font-size 500ms utils.$transition-timing;
-  }
-
-  &__button {
-    display: none;
-  }
-}
-
-@include breakpoints.medium {
-  .transparent {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 2rem 3rem;
-  }
-
-  .transparent .nav {
-    &__title {
-      transform: translateY(-250%);
-    }
-
-    &__link {
-      font-size: 1.4rem;
-    }
-  }
-}
-
-.mobile.nav {
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: start;
-  padding: 1rem 0;
-  background-color: transparent;
-  box-shadow: none;
-
-  &.open {
-    background-color: $red;
-    min-height: 100%;
-  }
-}
-
-.mobile .nav {
-  &__title {
-    display: none;
-  }
-
-  &__list {
     flex-direction: column;
     text-align: end;
-    margin-top: -12rem;
+    list-style: none;
+    transform: translateY(-5%);
     padding-top: 1rem;
+    margin: 0 0 0 auto;
+    padding: 0;
 
     width: 100%;
     pointer-events: none;
@@ -113,6 +50,8 @@
   }
 
   &__item {
+    transition: background 300ms utils.$transition-timing;
+
     &:hover,
     &:focus {
       background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
@@ -120,8 +59,17 @@
   }
 
   &__link {
+    text-decoration: none;
+    @include font('display', 600);
+    color: white;
+    display: block;
     font-size: 1.4rem;
-    padding-right: 2rem;
+    // padding-right: 2rem;
+    padding: 0.5rem 2rem;
+    @include utils.text-shadow('bold');
+
+    // transition: font-size 500ms utils.$transition-timing;
+    // transition: padding 500ms utils.$transition-timing;
   }
 
   &__button {
@@ -157,10 +105,10 @@
   }
 }
 
-.mobile.open .nav {
+.open .nav {
   &__list {
-    margin-top: 0;
-    pointer-events: auto;
+    transform: translateY(0);
+    pointer-events: all;
     opacity: 1;
   }
 
@@ -174,6 +122,68 @@
     }
     &--close {
       display: block;
+    }
+  }
+}
+
+@include breakpoints.medium {
+  .nav {
+    flex-direction: row;
+    background-color: $red;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(1rem, 3vw, 3rem);
+    margin-top: 0;
+    min-height: auto;
+    @include utils.box-shadow('bold');
+
+    &__title {
+      display: block;
+    }
+
+    &__list {
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__item {
+      // Gotta use background here since background is used earlier for the gradient hover effect, and background-color won't override it
+      pointer-events: all;
+
+      &:hover,
+      &:focus {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &__link {
+      color: white;
+      @include utils.text-shadow('bold');
+      padding: 0.6em clamp(1rem, 2vw - 0.5rem, 2rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+
+  .transparent {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 2rem 3rem;
+  }
+
+  .transparent .nav {
+    &__title {
+      transform: translateY(-250%);
+    }
+
+    &__link {
+      font-size: 1.4rem;
     }
   }
 }

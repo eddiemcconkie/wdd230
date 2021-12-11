@@ -64,18 +64,24 @@ a {
 
 .nav {
   display: flex;
-  background-color: #d6705c;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 clamp(1rem, 3vw, 3rem);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: start;
+  padding: 1rem 0;
+  background-color: transparent;
+  box-shadow: none;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 100%;
   transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
+.nav.open {
+  background-color: #d6705c;
+}
 .nav__title {
+  display: none;
   color: white;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -86,16 +92,23 @@ a {
 }
 .nav__list {
   display: flex;
+  flex-direction: column;
+  text-align: end;
   list-style: none;
+  transform: translateY(-5%);
+  padding-top: 1rem;
   margin: 0 0 0 auto;
   padding: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .nav__item {
-  background-color: transparent;
-  transition: background-color 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: background 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .nav__item:hover, .nav__item:focus {
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 .nav__link {
   text-decoration: none;
@@ -103,16 +116,87 @@ a {
   font-weight: 600;
   color: white;
   display: block;
-  padding: 0.5rem clamp(1rem, 2vw - 0.5rem, 2rem);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: 1.4rem;
+  padding: 0.5rem 2rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transition: font-size 500ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .nav__button {
+  display: flex;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #d6705c;
+  border: none;
+  border-radius: 5px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.nav__button-icon, .nav__button-icon--close, .nav__button-icon--open {
+  width: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav__button-icon:hover, .nav__button-icon--close:hover, .nav__button-icon--open:hover, .nav__button-icon:focus, .nav__button-icon--close:focus, .nav__button-icon--open:focus {
+  transform: scale(1.1);
+}
+.nav__button-icon--close {
   display: none;
 }
 
+.open .nav__list {
+  transform: translateY(0);
+  pointer-events: all;
+  opacity: 1;
+}
+.open .nav__button {
+  box-shadow: none;
+}
+.open .nav__button-icon--open {
+  display: none;
+}
+.open .nav__button-icon--close {
+  display: block;
+}
+
 @media screen and (min-width: 48rem) {
+  .nav {
+    flex-direction: row;
+    background-color: #d6705c;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(1rem, 3vw, 3rem);
+    margin-top: 0;
+    min-height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .nav__title {
+    display: block;
+  }
+  .nav__list {
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .nav__item {
+    pointer-events: all;
+  }
+  .nav__item:hover, .nav__item:focus {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .nav__link {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 0.6em clamp(1rem, 2vw - 0.5rem, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+  .nav__button {
+    display: none;
+  }
+
   .transparent {
     background-color: transparent;
     box-shadow: none;
@@ -126,79 +210,6 @@ a {
     font-size: 1.4rem;
   }
 }
-.mobile.nav {
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: start;
-  padding: 1rem 0;
-  background-color: transparent;
-  box-shadow: none;
-}
-.mobile.nav.open {
-  background-color: #d6705c;
-  min-height: 100%;
-}
-
-.mobile .nav__title {
-  display: none;
-}
-.mobile .nav__list {
-  flex-direction: column;
-  text-align: end;
-  margin-top: -12rem;
-  padding-top: 1rem;
-  width: 100%;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.mobile .nav__item:hover, .mobile .nav__item:focus {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-}
-.mobile .nav__link {
-  font-size: 1.4rem;
-  padding-right: 2rem;
-}
-.mobile .nav__button {
-  display: flex;
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
-  color: white;
-  background-color: #d6705c;
-  border: none;
-  border-radius: 5px;
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-.mobile .nav__button-icon, .mobile .nav__button-icon--close, .mobile .nav__button-icon--open {
-  width: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.mobile .nav__button-icon:hover, .mobile .nav__button-icon--close:hover, .mobile .nav__button-icon--open:hover, .mobile .nav__button-icon:focus, .mobile .nav__button-icon--close:focus, .mobile .nav__button-icon--open:focus {
-  transform: scale(1.1);
-}
-.mobile .nav__button-icon--close {
-  display: none;
-}
-
-.mobile.open .nav__list {
-  margin-top: 0;
-  pointer-events: auto;
-  opacity: 1;
-}
-.mobile.open .nav__button {
-  box-shadow: none;
-}
-.mobile.open .nav__button-icon--open {
-  display: none;
-}
-.mobile.open .nav__button-icon--close {
-  display: block;
-}
-
 .advertised-businesses {
   display: grid;
   grid-template-columns: 1fr;

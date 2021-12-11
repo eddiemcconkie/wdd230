@@ -2,7 +2,7 @@ const navigation = document.getElementById('navigation')
 const menuButton = document.getElementById('menuButton')
 const body = document.body
 
-const toggleNav = () => {
+const handleTransparentNav = () => {
   if (window.pageYOffset < 200) {
     navigation.classList.add('transparent')
   } else {
@@ -10,20 +10,15 @@ const toggleNav = () => {
   }
 }
 
-const toggleMobile = () => {
+const resizeWindow = () => {
   navigation.classList.remove('open')
   body.classList.remove('no-scroll')
-  if (window.innerWidth < 48 * 16 /* 48rem */) {
-    navigation.classList.add('mobile')
-  } else {
-    navigation.classList.remove('mobile')
-    toggleNav()
-  }
+  handleTransparentNav()
 }
 
-window.onload = toggleMobile
-window.onscroll = toggleNav
-window.onresize = toggleMobile
+window.onload = resizeWindow
+window.onscroll = handleTransparentNav
+window.onresize = resizeWindow
 
 menuButton.onclick = () => {
   navigation.classList.toggle('open')
