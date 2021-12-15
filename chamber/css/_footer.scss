@@ -1,0 +1,107 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.footer {
+  color: white;
+  // background-color: $rust;
+  background-color: #b75c49;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+
+  &__logo {
+    width: 100%;
+    @include utils.drop-shadow('light');
+  }
+
+  &__logo-container {
+    display: block;
+    margin-left: clamp(0rem, 5vw, 3rem);
+    margin-right: clamp(0rem, 5vw, 3rem);
+    width: clamp(5rem, 18vw, 7rem);
+    align-self: center;
+  }
+
+  @at-root .main-contact {
+    padding: 1rem;
+    font-style: normal;
+    align-self: flex-end;
+    flex-shrink: 0;
+    margin-right: auto;
+
+    &__title {
+      font-size: 1.2rem;
+      @include font('display', 700);
+    }
+
+    &__info {
+      list-style: none;
+      padding: 0;
+      line-height: 1.5;
+    }
+  }
+
+  &__social {
+    flex-basis: 30rem;
+    padding: 0 2rem 2rem 1rem;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-around;
+
+    &-link {
+      flex-shrink: 1;
+      flex-basis: 2.5rem;
+    }
+
+    &-icon {
+      width: 100%;
+      @include utils.drop-shadow('medium');
+      transition: transform 300ms utils.$transition-timing;
+
+      &:hover,
+      &:focus {
+        transform: translateY(-4px) scale(1.1);
+      }
+    }
+  }
+
+  a {
+    color: white;
+
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+
+  @include breakpoints.medium {
+    &__logo-container {
+      margin: 2rem;
+      width: 7rem;
+    }
+
+    @at-root .main-contact {
+      &__title {
+        font-size: 1.5rem;
+      }
+
+      &__info {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__social {
+      background-color: transparent;
+      align-items: flex-end;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @include breakpoints.large {
+    &__logo-container {
+      width: 9rem;
+    }
+  }
+}

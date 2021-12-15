@@ -1,12 +1,13 @@
 $rust: hsl(10, 46%, 55%);
 $red: hsl(10, 60%, 60%);
-$dark-red: hsl(10, 46%, 43%);
+$dark-red: hsl(10, 43%, 50%);
 $blue-gray: hsl(192, 15%, 32%);
 $dark-blue: hsl(192, 34%, 31%);
 $darker-blue: hsl(192, 46%, 25%);
 $light-gray: hsl(15, 40%, 96%);
 // $light-blue-gray: #dfe7e8;
 $light-blue-gray: hsl(180, 15%, 94%);
+$lighter-blue-gray: hsl(180, 15%, 96%);
 
 @mixin font($type, $weight) {
   @if $type == 'display' {

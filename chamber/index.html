@@ -12,14 +12,7 @@
 
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Red+Hat+Display:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,regular,500,600,700,300italic,italic,500italic,600italic,700italic"
-      rel="stylesheet"
-    />
+
     <link rel="shortcut icon" href="icons/logo.svg" type="image/x-icon" />
 
     <script src="js/menu.js" defer></script>
@@ -33,36 +26,31 @@
         <img class="nav__button-icon--close" src="icons/ui/close.svg" alt="close menu" />
       </button>
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+        <li class="nav__item"><a class="nav__link" href="../chamber">Home</a></li>
         <li class="nav__item"><a class="nav__link" href="city.html">City</a></li>
         <li class="nav__item"><a class="nav__link" href="join.html">Join</a></li>
         <li class="nav__item"><a class="nav__link" href="directory.html">Directory</a></li>
         <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
     <main>
       <div class="hero">
-        <img src="images/hero.jpg" alt="the great salt lake" width="100%" class="hero__img" />
+        <img src="images/hero.jpg" alt="the great salt lake" width="100%" class="hero__image" />
         <div class="hero__logo-container">
           <img src="icons/logo.svg" alt="chamber of commerce logo" class="hero__logo" />
         </div>
       </div>
 
-      <div class="container home-content">
+      <div class="container two-column-layout">
         <section class="section two-column">
-          <h2 class="section__heading">Our Mission</h2>
+          <h2 class="section__heading">What We Do</h2>
           <hr />
-          <p class="centered main-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veniam optio facere error
-            vel! Aperiam ducimus, quasi et accusamus dicta repellendus illo omnis blanditiis animi
-            harum tempora libero, iusto laboriosam. Quidem neque adipisci obcaecati laborum, facere
-            vero error, nulla, eos cupiditate libero placeat distinctio magnam ex numquam! Iusto,
-            dolor debitis.
+          <p class="main-content">
+            <strong>Your business matters to us.</strong> We bring together businesses in the Salt
+            Lake area that share our goal of improving and strengthening the community. Join SLC
+            Chamber of Commerce and we’ll help you advertise and grow you business.
           </p>
-        </section>
-
-        <section class="section two-column">
-          <h2 class="section__heading--small">Become a member</h2>
           <a href="join.html" class="join-button">Join us!</a>
         </section>
 
@@ -76,7 +64,7 @@
               </div>
               <section class="business__info">
                 <h3 class="business__name">Zions Bank</h3>
-                <em class="business__slogan">We Haven't Forgotten Who Keeps Us in Business </em>
+                <em class="business__slogan">We Haven’t Forgotten Who Keeps Us in Business </em>
                 <p class="business__membership">Member of SLC Chamber since 1999</p>
                 <address class="business__contact">
                   <span>Contact us at</span>
@@ -133,7 +121,7 @@
             </div>
           </div>
           <em class="attribution">
-            Images info from
+            Images from
             <a href="https://unsplash.com" target="_blank" ref="noopener noreferrer">
               unsplash.com
             </a>
@@ -141,22 +129,21 @@
         </section>
 
         <section class="section one-column">
-          <h2 class="section__heading--small">Upcoming Events</h2>
+          <h2 class="section__heading">Upcoming Events</h2>
           <hr />
           <ul class="upcoming-events">
-            <li>December 25 – Christmas Day</li>
-            <li>December 31 – New Year's Eve</li>
-            <li>January 1 – New Year's Day</li>
-            <li>May 31 – Memorial Day</li>
-            <li>July 4 – Independence Day</li>
-            <li>September 6 – Labor Day</li>
-            <li>November 11 – Veterans Day</li>
+            <li><strong>January</strong> – Sundance Film Festival</li>
+            <li><strong>June</strong> – Utah Arts Festival</li>
+            <li><strong>July 24</strong> – Pioneer Day</li>
+            <li><strong>May</strong> – Great Salt Lake Bird Festival</li>
+            <li><strong>May 10</strong> – Golden Spike Ceremony</li>
+            <li><strong>September</strong> – Utah State Fair</li>
+            <li><strong>December</strong> – Festival of Trees</li>
           </ul>
-          <hr />
         </section>
 
         <section class="section one-column">
-          <h2 class="section__heading--small">Weather</h2>
+          <h2 class="section__heading">Weather</h2>
           <hr />
           <div class="weather__grid">
             <div class="weather__today weather__layout">
@@ -173,9 +160,7 @@
               />
               <span id="currentWeatherTemperature">&deg;F</span>
             </div>
-          </div>
-          <hr />
-          <div class="weather__grid">
+
             <div class="weather__forecast weather__layout">
               <div class="weather__header">Tue</div>
               <img
@@ -205,6 +190,7 @@
         </section>
       </div>
     </main>
+
     <footer class="footer">
       <div class="footer__logo-container">
         <img src="icons/logo.svg" alt="footer logo" class="footer__logo" />
@@ -253,9 +239,16 @@
             <img src="icons/social/share.svg" alt="share icon" class="footer__social-icon" />
           </a>
         </li>
-
-        <!-- <a href="" class="footer__social-media--icon"></a> -->
       </ul>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Red Hat Display:400,600,700', 'Red Hat Text:400,600,700'],
+        },
+      })
+    </script>
   </body>
 </html>

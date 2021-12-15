@@ -1,0 +1,108 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.directory {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__layout-toggle {
+    display: none;
+  }
+
+  &__item {
+    border: 1.5px solid $dark-blue;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    text-align: left;
+    background-color: $lighter-blue-gray;
+  }
+
+  &__main-info {
+    margin-right: auto;
+    flex-basis: 300px;
+  }
+
+  &__logo {
+    max-height: 75px;
+    width: 150px;
+    object-fit: contain;
+  }
+
+  &__name {
+    margin: 0;
+    color: $blue-gray;
+    font-size: 1.4rem;
+  }
+
+  &__website {
+    text-align: right;
+  }
+
+  &__contact-info {
+    padding: 0;
+    list-style-type: none;
+    flex-basis: 100%;
+  }
+
+  @include breakpoints.medium {
+    &__layout-toggle {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    &__layout-button {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      background-color: $light-blue-gray;
+      border: 2px solid $dark-blue;
+      border-radius: 3px;
+      cursor: pointer;
+
+      transition: filter 200ms utils.$transition-timing;
+
+      & * {
+        width: 100%;
+      }
+
+      &.selected {
+        background-color: $dark-blue;
+
+        & * {
+          filter: brightness(5);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        filter: brightness(0.9);
+      }
+    }
+
+    &.grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @include breakpoints.large {
+    &__layout-button {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &__contact-info {
+      flex-basis: 300px;
+    }
+  }
+}

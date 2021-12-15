@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Genesys Medical Institute",
+    "website": "https://genesysinstitute.com",
+    "websiteShort": "genesysinstitute.com",
+    "phone": "801-671-7456",
+    "email": "jeff@genesysinstitute.com",
+    "address": "7525 Union Park Ave Midvale, UT 84047",
+    "logoUrl": "genesys.png"
+  },
+  {
+    "name": "Mynt Solar",
+    "website": "https://myntsolar.com",
+    "websiteShort": "myntsolar.com",
+    "phone": "801-682-1724",
+    "email": "info@myntsolar.com",
+    "address": "2701 N Thanksgiving Way, #100, Lehi UT 84043",
+    "logoUrl": "myntsolar.png"
+  },
+  {
+    "name": "Jardine Law Offices, P.C.",
+    "website": "https://www.trafficlawut.com",
+    "websiteShort": "www.trafficlawut.com",
+    "phone": "801-923-6748",
+    "email": "info@jlodefense.com",
+    "address": "140 North Union Avenue, Suite 205 Farmington UT 84025",
+    "logoUrl": "jardinelawoffices.png"
+  },
+  {
+    "name": "OSPInsight",
+    "website": "https://ospinsight.com",
+    "websiteShort": "ospinsight.com",
+    "phone": "801-936-0970",
+    "email": "support@ospinsight.com",
+    "address": "3672 W South Jordan Pkwy, Suite 102, South Jordan, UT 84009",
+    "logoUrl": "ospinsight.png"
+  },
+  {
+    "name": "Interpret Cloud",
+    "website": "https://interpretcloud.com",
+    "websiteShort": "interpretcloud.com",
+    "phone": "385-321-5070",
+    "email": "info@interpretcloud.com",
+    "address": "320 West 200 South Salt Lake City UT 84101",
+    "logoUrl": "interpretcloud.png"
+  },
+  {
+    "name": "Salt Lake Dental",
+    "website": "https://saltlakedental.net",
+    "websiteShort": "saltlakedental.net",
+    "phone": "385-257-9303",
+    "email": "drcarterdmd@gmail.com",
+    "address": "2120 S 700 E Suite I, Salt Lake City UT 84106",
+    "logoUrl": "saltlakedental.png"
+  },
+  {
+    "name": "Utah Tree Co.",
+    "website": "https://utahtreeco.com",
+    "websiteShort": "utahtreeco.com",
+    "phone": "801-330-8861",
+    "email": "business.utahtreeco@gmail.com",
+    "address": "615 W 9400 S #109, 1B Sandy UT 84070",
+    "logoUrl": "utahtreeco.png"
+  }
+]

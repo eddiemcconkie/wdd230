@@ -1,0 +1,203 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.form {
+  accent-color: $darker-blue;
+  text-align: left;
+
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    padding: 2rem 0;
+    border: none;
+    border-top: 2px solid $darker-blue;
+    border-radius: 3px;
+    border-radius: 0;
+  }
+
+  &__legend {
+    font-size: 1.3rem;
+    color: $blue-gray;
+    @include font('display', 600);
+    padding: 0.5rem;
+    margin: -0.5rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    @include font('display', 600);
+    color: $dark-red;
+  }
+
+  &__input {
+    border: 1.5px solid $blue-gray;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    width: 100%;
+    max-width: 25rem;
+    background-color: $lighter-blue-gray;
+  }
+
+  &__textarea {
+    resize: vertical;
+    width: 100%;
+    height: 6rem;
+    min-height: 4rem;
+    max-height: 10rem;
+    border: 1.5px solid $blue-gray;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    background-color: $lighter-blue-gray;
+  }
+
+  &__submit {
+    border: none;
+    // margin-top: 1.5rem;
+    margin-top: 3rem;
+    max-width: 15rem;
+  }
+
+  @include breakpoints.medium {
+    &__fieldset {
+      padding: 2rem;
+    }
+  }
+
+  @include breakpoints.large {
+    &__input {
+      padding: 0.2rem;
+    }
+  }
+}
+
+.membership {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &__label {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    display: block;
+    border: 1.5px solid $darker-blue;
+    background-color: $lighter-blue-gray;
+    @include font('display', 600);
+  }
+
+  &__radio {
+    display: none;
+
+    &:checked + .membership__label {
+      background-color: $darker-blue;
+      color: white;
+    }
+  }
+
+  &__level {
+    flex: 1 1 25%;
+  }
+
+  &__info {
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    transition: all 300ms utils.$transition-timing;
+  }
+
+  &__radio:checked ~ &__info {
+    z-index: 1;
+    height: auto;
+    padding: 1rem;
+    border-top: none;
+    border: 1.5px solid $darker-blue;
+  }
+
+  &__price {
+    @include font('display', 900);
+    font-size: 1.7rem;
+    color: $rust;
+  }
+
+  &__list {
+    margin: 0;
+    font-style: italic;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+
+    &--additional {
+      list-style-type: none;
+      font-size: 1rem;
+      transform: translateX(-0.2rem);
+
+      &::marker {
+        font-weight: 700;
+        content: '+ ';
+        font-style: normal;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include breakpoints.medium {
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+
+    &__info {
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 1rem;
+      display: none;
+      position: absolute;
+      min-height: 6rem;
+    }
+
+    &__label {
+      text-align: center;
+    }
+
+    &__level {
+      &:first-child .membership__label {
+        border-top-left-radius: 5px;
+      }
+
+      &:last-child .membership__label {
+        border-top-right-radius: 5px;
+      }
+    }
+
+    &__radio:checked ~ &__info {
+      display: flex;
+      padding: 1rem;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border-width: 1.5px;
+      border-radius: 0 0 5px 5px;
+      border-top: none;
+    }
+
+    &__price {
+      flex-basis: 9rem;
+    }
+  }
+}

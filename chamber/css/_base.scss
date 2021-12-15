@@ -21,8 +21,17 @@ body.no-scroll {
 }
 
 a {
-  color: $red;
+  color: $dark-red;
   @include font('body', 600);
+
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+}
+
+strong {
+  color: $blue-gray;
 }
 
 ::selection {

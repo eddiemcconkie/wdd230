@@ -3,7 +3,8 @@ const menuButton = document.getElementById('menuButton')
 const body = document.body
 
 const handleTransparentNav = () => {
-  if (window.pageYOffset < 200) {
+  // Sticky nav can't be transparent
+  if (window.pageYOffset < 200 && !navigation.classList.contains('non-transparent')) {
     navigation.classList.add('transparent')
   } else {
     navigation.classList.remove('transparent')

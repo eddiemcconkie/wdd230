@@ -1,0 +1,28 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.tech-companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+
+  & * {
+    width: 200px;
+  }
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  gap: 1rem;
+  line-height: 2;
+  font-size: 1.1rem;
+  text-align: left;
+  max-width: 30rem;
+}
