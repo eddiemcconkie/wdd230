@@ -36,7 +36,19 @@
 
     <main>
       <div class="hero">
-        <img src="images/hero.jpg" alt="the great salt lake" width="100%" class="hero__image" />
+        <picture>
+          <source
+            srcset="
+              images/hero/home400.webp   400w,
+              images/hero/home800.webp   800w,
+              images/hero/home1200.webp 1200w
+            "
+            sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+            type="image/webp"
+          />
+          <source srcset="images/hero/home-original.jpg" />
+          <img src="images/hero/home-original.jpg" alt="great salt lake" class="hero__image" />
+        </picture>
         <div class="hero__logo-container">
           <img src="icons/logo.svg" alt="chamber of commerce logo" class="hero__logo" />
         </div>
@@ -60,7 +72,11 @@
           <div class="advertised-businesses">
             <div class="business">
               <div class="business__image-container">
-                <img src="images/business-1-autox300.jpg" alt="" class="business__image" />
+                <picture>
+                  <source srcset="images/business-1.webp" type="image/webp" />
+                  <source srcset="images/business-1.jpg" />
+                  <img src="images/business-1.jpg" alt="building in downtown salt lake" />
+                </picture>
               </div>
               <section class="business__info">
                 <h3 class="business__name">Zions Bank</h3>
@@ -80,7 +96,11 @@
 
             <div class="business">
               <div class="business__image-container">
-                <img src="images/business-2-autox300.jpg" alt="" class="business__image" />
+                <picture>
+                  <source srcset="images/business-2.webp" type="image/webp" />
+                  <source srcset="images/business-2.jpg" />
+                  <img src="images/business-2.jpg" alt="building in downtown salt lake" />
+                </picture>
               </div>
               <section class="business__info">
                 <h3 class="business__name">Ken Garff</h3>
@@ -100,7 +120,11 @@
 
             <div class="business">
               <div class="business__image-container">
-                <img src="images/business-3-autox300.jpg" alt="" class="business__image" />
+                <picture>
+                  <source srcset="images/business-3.webp" type="image/webp" />
+                  <source srcset="images/business-3.jpg" />
+                  <img src="images/business-3.jpg" alt="building in downtown salt lake" />
+                </picture>
               </div>
               <section class="business__info">
                 <h3 class="business__name">Vivint</h3>

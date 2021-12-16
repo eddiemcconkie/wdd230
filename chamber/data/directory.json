@@ -6,7 +6,7 @@
     "phone": "801-671-7456",
     "email": "jeff@genesysinstitute.com",
     "address": "7525 Union Park Ave Midvale, UT 84047",
-    "logoUrl": "genesys.png"
+    "logoUrl": "genesys"
   },
   {
     "name": "Mynt Solar",
@@ -15,7 +15,7 @@
     "phone": "801-682-1724",
     "email": "info@myntsolar.com",
     "address": "2701 N Thanksgiving Way, #100, Lehi UT 84043",
-    "logoUrl": "myntsolar.png"
+    "logoUrl": "myntsolar"
   },
   {
     "name": "Jardine Law Offices, P.C.",
@@ -24,7 +24,7 @@
     "phone": "801-923-6748",
     "email": "info@jlodefense.com",
     "address": "140 North Union Avenue, Suite 205 Farmington UT 84025",
-    "logoUrl": "jardinelawoffices.png"
+    "logoUrl": "jardinelawoffices"
   },
   {
     "name": "OSPInsight",
@@ -33,7 +33,7 @@
     "phone": "801-936-0970",
     "email": "support@ospinsight.com",
     "address": "3672 W South Jordan Pkwy, Suite 102, South Jordan, UT 84009",
-    "logoUrl": "ospinsight.png"
+    "logoUrl": "ospinsight"
   },
   {
     "name": "Interpret Cloud",
@@ -42,7 +42,7 @@
     "phone": "385-321-5070",
     "email": "info@interpretcloud.com",
     "address": "320 West 200 South Salt Lake City UT 84101",
-    "logoUrl": "interpretcloud.png"
+    "logoUrl": "interpretcloud"
   },
   {
     "name": "Salt Lake Dental",
@@ -51,7 +51,7 @@
     "phone": "385-257-9303",
     "email": "drcarterdmd@gmail.com",
     "address": "2120 S 700 E Suite I, Salt Lake City UT 84106",
-    "logoUrl": "saltlakedental.png"
+    "logoUrl": "saltlakedental"
   },
   {
     "name": "Utah Tree Co.",
@@ -60,6 +60,6 @@
     "phone": "801-330-8861",
     "email": "business.utahtreeco@gmail.com",
     "address": "615 W 9400 S #109, 1B Sandy UT 84070",
-    "logoUrl": "utahtreeco.png"
+    "logoUrl": "utahtreeco"
   }
 ]

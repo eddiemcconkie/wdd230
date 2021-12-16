@@ -35,7 +35,23 @@
 
     <main>
       <div class="hero">
-        <img src="images/city-hero-original.jpg" alt="lake" width="100%" class="hero__image" />
+        <picture>
+          <source
+            srcset="
+              images/hero/city400.webp   400w,
+              images/hero/city800.webp   800w,
+              images/hero/city1200.webp 1200w
+            "
+            sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+            type="image/webp"
+          />
+          <source srcset="images/hero/city-original.jpg" />
+          <img
+            src="images/hero/city-original.jpg"
+            alt="utah capitol building"
+            class="hero__image"
+          />
+        </picture>
       </div>
 
       <div class="container one-column-layout">
@@ -55,16 +71,56 @@
           <h2 class="section__heading">Utah Tech</h2>
           <hr />
           <div class="tech-companies">
-            <img src="images/city/ancestry.png" alt="ancestry logo" />
-            <img src="images/city/weave.png" alt="weave logo" />
-            <img src="images/city/veracity.png" alt="ceracity logo" />
-            <img src="images/city/lucid.png" alt="lucid logo" />
-            <img src="images/city/entrata.png" alt="entrata logo" />
-            <img src="images/city/pluralsight.png" alt="pluralsight logo" />
-            <img src="images/city/adobe.png" alt="adobe logo" />
-            <img src="images/city/bamboohr.png" alt="bamboo hr logo" />
-            <img src="images/city/vivint.png" alt="vivint logo" />
-            <img src="images/city/simplus.png" alt="simplus logo" />
+            <picture>
+              <source srcset="images/city/ancestry.webp" type="image/webp" />
+              <source srcset="images/city/ancestry.png" type="image/png" />
+              <img src="images/city/ancestry.png" alt="ancestry logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/weave.webp" type="image/webp" />
+              <source srcset="images/city/weave.png" type="image/png" />
+              <img src="images/city/weave.png" alt="weave logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/veracity.webp" type="image/webp" />
+              <source srcset="images/city/veracity.png" type="image/png" />
+              <img src="images/city/veracity.png" alt="veracity logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/lucid.webp" type="image/webp" />
+              <source srcset="images/city/lucid.png" type="image/png" />
+              <img src="images/city/lucid.png" alt="lucid logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/entrata.webp" type="image/webp" />
+              <source srcset="images/city/entrata.png" type="image/png" />
+              <img src="images/city/entrata.png" alt="entrata logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/pluralsight.webp" type="image/webp" />
+              <source srcset="images/city/pluralsight.png" type="image/png" />
+              <img src="images/city/pluralsight.png" alt="pluralsight logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/adobe.webp" type="image/webp" />
+              <source srcset="images/city/adobe.png" type="image/png" />
+              <img src="images/city/adobe.png" alt="adobe logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/bamboohr.webp" type="image/webp" />
+              <source srcset="images/city/bamboohr.png" type="image/png" />
+              <img src="images/city/bamboohr.png" alt="bamboohr logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/vivint.webp" type="image/webp" />
+              <source srcset="images/city/vivint.png" type="image/png" />
+              <img src="images/city/vivint.png" alt="vivint logo" />
+            </picture>
+            <picture>
+              <source srcset="images/city/simplus.webp" type="image/webp" />
+              <source srcset="images/city/simplus.png" type="image/png" />
+              <img src="images/city/simplus.png" alt="simplus logo" />
+            </picture>
           </div>
         </section>
 
@@ -113,6 +169,7 @@
       </address>
       <ul class="footer__social">
         <li class="footer__social-link">
+          <!-- TODO: add social links, add noopener to directory and event links, add srcset and sizes to hero images -->
           <a href="#">
             <img src="icons/social/facebook.svg" alt="facebook icon" class="footer__social-icon" />
           </a>

@@ -36,19 +36,23 @@ const loadDirectory = async () => {
       const { name, website, websiteShort, phone, email, address, logoUrl } = business
       return `
         <li class="directory__item">
-          <img src="images/directory/${logoUrl}" alt="${name} logo" class="directory__logo" width="150" />
-          <div class="directory__main-info">
-            <h3 class="directory__name">${name}</h3>
-            <span class="directory__website">
-              <a href="${website}">${websiteShort}</a>
-            </span>
-          </div>
-          <ul class="directory__contact-info">
-            <li>Phone: ${phone}</li>
-            <li>Email: ${email}</li>
-            <li>${address}</li>
-          </ul>
-        </li>
+        <picture>
+          <source srcset="images/directory/${logoUrl}.webp" type="image/webp" />
+          <source srcset="images/directory/${logoUrl}.png" type="image/png" />
+          <img src="images/directory/${logoUrl}.png" alt="${name} logo" class="directory__logo" />
+        </picture>
+        <div class="directory__main-info">
+          <h3 class="directory__name">${name}</h3>
+          <span class="directory__website">
+            <a href="${website}">${websiteShort}</a>
+          </span>
+        </div>
+        <ul class="directory__contact-info">
+          <li>Phone: ${phone}</li>
+          <li>Email: ${email}</li>
+          <li>${address}</li>
+        </ul>
+      </li>
       `
     })
     .join('')

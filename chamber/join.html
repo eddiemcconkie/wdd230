@@ -36,7 +36,19 @@
 
     <main>
       <div class="hero--subpage">
-        <img src="images/join-hero-original.jpg" alt="lake" width="100%" class="hero__image" />
+        <picture>
+          <source
+            srcset="
+              images/hero/join400.webp   400w,
+              images/hero/join800.webp   800w,
+              images/hero/join1200.webp 1200w
+            "
+            sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+            type="image/webp"
+          />
+          <source srcset="images/hero/join-original.jpg" />
+          <img src="images/hero/join-original.jpg" alt="view of salt lake city" class="hero__image" />
+        </picture>
       </div>
 
       <div class="container one-column-layout">
@@ -46,13 +58,13 @@
           <hr>
           
           <div class="main-content">
-            <form action="#" method="get" class="form">
+            <form action="thanks.html" method="get" class="form">
               <div class="membership">
                 <div class="membership__level">
                   <input class="membership__radio" id="nonprofit" type="radio" name="membership" checked ></input>
                   <label class="membership__label" for="nonprofit">Non-Profit</label>
                   <div class="membership__info">
-                    <div class="membership__price">$100/mo</div>
+                    <div class="membership__price">$100/year</div>
                     <ul class="membership__list">
                       <li>Company listed in the directory.</li>
                       <li>Invitations to special yearly events.</li>
@@ -65,7 +77,7 @@
                   <input class="membership__radio" id="bronze" type="radio" name="membership" ></input>
                   <label class="membership__label" for="bronze">Bronze</label>
                   <div class="membership__info">
-                    <div class="membership__price">$200/mo</div>
+                    <div class="membership__price">$200/year</div>
                     <ul class="membership__list">
                       <li>Social media posts.</li>
                       <li class="membership__list--additional">Benefits of Non-Profit</li>
@@ -77,7 +89,7 @@
                   <input class="membership__radio" id="silver" type="radio" name="membership" ></input>
                   <label class="membership__label" for="silver">Silver</label>
                   <div class="membership__info">
-                    <div class="membership__price">$400/mo</div>
+                    <div class="membership__price">$400/year</div>
                     <ul class="membership__list">
                       <li>Luncheon tickets.</li>
                       <li>Employee discounts on local events.</li>
@@ -90,7 +102,7 @@
                   <input class="membership__radio" id="gold" type="radio" name="membership" ></input>
                   <label class="membership__label" for="gold">Gold</label>
                   <div class="membership__info">
-                    <div class="membership__price">$1000/mo</div>
+                    <div class="membership__price">$1000/year</div>
                     <ul class="membership__list">
                       <li>Business trainings.</li>
                       <li>Advertising on Chamber home page.</li>
@@ -143,7 +155,7 @@
                   <span>Business Description</span>
                   <textarea class="form__textarea" name="description"></textarea>
                 </label>
-                <input class="join-button form__submit " type="submit" value="Join" />
+                <input class="form__submit" type="submit" value="Join" />
               </fieldset>
             </form>
           </div>

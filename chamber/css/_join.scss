@@ -59,9 +59,21 @@
 
   &__submit {
     border: none;
-    // margin-top: 1.5rem;
     margin-top: 3rem;
-    max-width: 15rem;
+    max-width: 10rem;
+    padding: 0.3em;
+    border-radius: 3px;
+    color: white;
+    background-color: $dark-blue;
+    font-size: 1.5rem;
+    @include font('display', 700);
+    @include utils.text-shadow('medium');
+    @include utils.box-shadow('medium');
+
+    &:hover,
+    &:focus {
+      filter: brightness(1.2);
+    }
   }
 
   @include breakpoints.medium {
@@ -197,7 +209,7 @@
     }
 
     &__price {
-      flex-basis: 9rem;
+      flex-basis: 10rem;
     }
   }
 }
