@@ -1,0 +1,72 @@
+@use 'theme' as *;
+@use 'utils';
+@use 'breakpoints';
+
+.alert {
+  &__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  &__modal {
+    position: relative;
+    width: 95%;
+    max-width: 40rem;
+    height: 90%;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 3px;
+    background-color: $red;
+    overflow-y: auto;
+    @include utils.box-shadow('bold');
+  }
+
+  &__event {
+    color: white;
+    margin: 0;
+    display: inline-block;
+    @include utils.text-shadow('medium');
+  }
+
+  &__from {
+    color: white;
+    display: inline-block;
+    margin-left: 0.2rem;
+    @include utils.text-shadow('medium');
+    @include font('display', 700);
+  }
+
+  &__body {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    @include utils.drop-shadow('bold');
+    transition: transform 200ms utils.$transition-timing;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    & * {
+      width: 2rem;
+    }
+  }
+}

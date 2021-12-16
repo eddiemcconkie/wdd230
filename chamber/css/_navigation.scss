@@ -92,8 +92,8 @@
     background-color: $red;
     border: none;
     border-radius: 5px;
-    @include font('display', 600);
-    @include utils.text-shadow('bold');
+    // @include font('display', 600);
+    // @include utils.text-shadow('bold');
     @include utils.box-shadow('bold');
 
     &:hover &-icon {

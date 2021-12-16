@@ -26,6 +26,7 @@ const loadWeather = async () => {
   const weatherData = await fetch(WeatherApiUrl)
   const weatherJson = await weatherData.json()
 
+  // Current weather
   const currentTemp = Math.round(weatherJson.current.temp)
   const currentHumidity = weatherJson.current.humidity
   let currentDescription = weatherJson.current.weather[0].description
@@ -37,6 +38,7 @@ const loadWeather = async () => {
   document.getElementById('currentWeatherHumidity').innerHTML = `Humidity: ${currentHumidity}%`
   document.getElementById('currentWeatherIcon').src = `icons/weather/${iconMap[currentIcon]}.svg`
 
+  // Forecast
   const daily = weatherJson.daily.slice(1, 4)
   document.querySelectorAll('.weather__forecast').forEach((forecast, index) => {
     const day = daily[index]
@@ -47,6 +49,52 @@ const loadWeather = async () => {
     forecast.querySelector('.weather__icon').src = `icons/weather/${iconMap[dayIcon]}.svg`
     forecast.querySelector('.weather__temperature').innerHTML = `${dayTemp}&deg;F`
   })
+
+  // Alerts
+  const alerts = weatherJson.alerts || [
+    {
+      sender_name: 'NWS Tulsa',
+      event: 'Heat Advisory',
+      start: 1597341600,
+      end: 1597366800,
+      description:
+        '...HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO\n8 PM CDT THIS EVENING...\n* WHAT...Heat index values of 105 to 109 degrees expected.\n* WHERE...Creek, Okfuskee, Okmulgee, McIntosh, Pittsburg,\nLatimer, Pushmataha, and Choctaw Counties.\n* WHEN...From 1 PM to 8 PM CDT Thursday.\n* IMPACTS...The combination of hot temperatures and high\nhumidity will combine to create a dangerous situation in which\nheat illnesses are possible.',
+      tags: ['Extreme temperature value'],
+    },
+  ]
+  if (alerts.length > 0) {
+    document.body.classList.add('no-scroll')
+
+    const alertOverlay = document.createElement('div')
+    alertOverlay.classList.add('alert__overlay')
+
+    const alertModal = document.createElement('div')
+    alertModal.classList.add('alert__modal')
+    alertModal.innerHTML = alerts
+      .map(
+        (alert) => `
+      <div class="alert__header">
+        <h2 class="alert__event">${alert.event}</h2>
+        <span class="alert__from">from ${alert.sender_name}</span>
+      </div>
+      <p class="alert__body">${alert.description.replaceAll('\n', '<br />')}</p>
+    `
+      )
+      .join('')
+    alertOverlay.appendChild(alertModal)
+
+    const alertClose = document.createElement('button')
+    alertClose.classList.add('alert__close')
+    // alertClose.innerHTML = '&times;'
+    alertClose.innerHTML = '<img src="icons/ui/close.svg" alt="close icon"></img>'
+    alertClose.addEventListener('click', () => {
+      document.body.classList.remove('no-scroll')
+      alertOverlay.remove()
+    })
+    alertModal.appendChild(alertClose)
+
+    document.body.appendChild(alertOverlay)
+  }
 }
 
 loadWeather()
